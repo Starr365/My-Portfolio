@@ -54,7 +54,7 @@ function TypewriterText({ text }: { text: string; delay?: number }) {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-20 flex items-center justify-center gradient-bg overflow-hidden">
+    <section className="relative min-h-screen pt-16 sm:pt-20 flex items-center justify-center gradient-bg overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-2xl"
@@ -148,19 +148,19 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 px-2 max-w-7xl mx-auto">
-        <div className="flex flex-col-reverse md:flex-row px-2 items-center min-h-[80vh] gap-4 md:gap-8">
+      <div className="relative z-10 px-3 sm:px-4 lg:px-6 max-w-7xl mx-auto">
+        <div className="flex flex-col-reverse lg:flex-row px-2 sm:px-3 items-center min-h-[80vh] gap-6 sm:gap-8 lg:gap-12">
           {/* Text Content Div - comes first on desktop, second on mobile */}
-          <div className="w-full md:w-auto md:flex-1 text-center md:text-left pt-20 max-w-2xl">
+          <div className="w-full lg:w-auto lg:flex-1 text-center lg:text-left pt-8 sm:pt-12 lg:pt-20 max-w-2xl">
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-3 text-balance"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-2 sm:mb-3 text-balance leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <TypewriterText text="Hi, I'm Nzeribe Mmesoma" delay={800} />
               <motion.span
-                className="block text-4xl md:text-6xl lg:text-7xl web3-gradient bg-clip-text text-transparent mt-2"
+                className="block text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl web3-gradient bg-clip-text text-transparent mt-1 sm:mt-2"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 2.5 }}
@@ -169,42 +169,41 @@ export function HeroSection() {
             </motion.h1>
 
             <motion.div
-              className=" flex items-center mb-6 relative gap-2 px-6 py-3 border rounded-full max-w-md mx-auto md:mx-0 justify-center text-foreground text-xl font-lg transition-all duration-300"
+              className="flex items-center mb-4 sm:mb-6 relative gap-2 px-4 sm:px-6 py-2 sm:py-3 border rounded-full max-w-sm sm:max-w-md mx-auto lg:mx-0 justify-center text-foreground text-base sm:text-lg lg:text-xl font-medium transition-all duration-300"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 3 }}
             >
-              <div className="flex items-center">
+              <div className="flex items-center gap-1 sm:gap-2">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                 >
-                  <Sparkles className="w-4 h-4 text-primary" />
+                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                 </motion.div>
-                <span> Frontend Engineer & Web3 Enthusiast </span>
+                <span className="text-sm sm:text-base lg:text-lg">Frontend Engineer & Web3 Enthusiast</span>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                 >
-                  <Code2 className="w-4 h-4 text-secondary" />
+                  <Code2 className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
                 </motion.div>
               </div>
-
             </motion.div>
 
             <motion.p
-              className="text-lg md:text-xl lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 text-pretty leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0 text-pretty leading-relaxed px-2 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              I build functional, scalable, and user-friendly websites from concept to code — transforming ideas into seamless 
+              I build functional, scalable, and user-friendly websites from concept to code — transforming ideas into seamless
               digital experiences using cutting-edge technologies, modern frameworks, and pixel-perfect design.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center mb-8 sm:mb-12 lg:mb-16"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
@@ -213,7 +212,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   onClick={() => scrollToSection("#projects")}
-                  className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-10 py-4 text-lg font-semibold rounded-lg border-0"
+                  className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
                 >
                   <Zap className="w-5 h-5 mr-2" />
                   Explore My Work
@@ -223,7 +222,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   onClick={() => scrollToSection("#contact")}
-                  className="bg-background/80 backdrop-blur-sm border-2 border-primary/30 text-foreground hover:bg-background hover:border-primary/60 hover:text-primary shadow-lg hover:shadow-xl transition-all duration-300 px-10 py-4 text-lg font-semibold rounded-md dark:bg-background/20 dark:border-primary/40 dark:hover:bg-background/40 dark:hover:border-primary/80"
+                  className="bg-background/80 backdrop-blur-sm border-2 border-primary/30 text-foreground hover:bg-background hover:border-primary/60 hover:text-primary shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-md dark:bg-background/20 dark:border-primary/40 dark:hover:bg-background/40 dark:hover:border-primary/80 w-full sm:w-auto"
                 >
                   Let&apos;s Connect
                 </Button>
@@ -231,7 +230,7 @@ export function HeroSection() {
             </motion.div>
           </div>
           {/* Image Content Div - comes first on desktop, second on mobile */}
-          <div className="flex-1 flex justify-center lg:justify-end">
+          <div className="flex-1 flex justify-center lg:justify-end mt-8 sm:mt-12 lg:mt-0">
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: 50 }}
@@ -415,7 +414,7 @@ export function HeroSection() {
 
               {/* Main photo frame */}
               <motion.div
-                className="relative w-80 h-80 md:w-96 md:h-96 rounded-full glass-card p-2 hover:scale-105 transition-all duration-500"
+                className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full glass-card p-2 hover:scale-105 transition-all duration-500"
                 whileHover={{
                   boxShadow: "0 0 50px rgba(147, 51, 234, 0.3), 0 0 100px rgba(59, 130, 246, 0.2)",
                 }}
@@ -446,7 +445,7 @@ export function HeroSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  <Code2 className="w-6 h-6 text-primary" />
+                  <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </motion.div>
 
                 <motion.div
@@ -462,7 +461,7 @@ export function HeroSection() {
                     delay: 1.5,
                   }}
                 >
-                  <Sparkles className="w-6 h-6 text-secondary" />
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-secondary" />
                 </motion.div>
 
                 <motion.div
@@ -478,7 +477,7 @@ export function HeroSection() {
                     delay: 0.5,
                   }}
                 >
-                  <Zap className="w-5 h-5 text-primary" />
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </motion.div>
               </motion.div>
             </motion.div>

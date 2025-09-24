@@ -54,26 +54,26 @@ export function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-            <div className="relative flex items-center justify-center w-relative h-12 px-2 rounded-2xl bg-gradient-to-br from-background/60 via-background/40 to-background/20 shadow-lg border border-primary/20 transition-all duration-300 dark:from-primary/60 dark:via-primary/40 dark:to-accent/60">
+            <div className="relative flex items-center justify-center w-auto h-10 sm:h-12 px-2 sm:px-3 rounded-xl sm:rounded-2xl bg-gradient-to-br from-background/60 via-background/40 to-background/20 shadow-lg border border-primary/20 transition-all duration-300 dark:from-primary/60 dark:via-primary/40 dark:to-accent/60">
               {/* Logo with inverted theme styling */}
-              <span className="text-lg font-black bg-gradient-to-br from-primary/80 via-primary/60 to-accent/60 bg-clip-text text-transparent drop-shadow-sm dark:from-background/80 dark:via-background/60 dark:to-background/40">
+              <span className="text-base sm:text-lg font-black bg-gradient-to-br from-primary/80 via-primary/60 to-accent/60 bg-clip-text text-transparent drop-shadow-sm dark:from-background/80 dark:via-background/60 dark:to-background/40">
                 {MyLogo}
               </span>
             </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden lg:block">
+            <div className="ml-8 xl:ml-10 flex items-baseline space-x-6 xl:space-x-8">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium cursor-pointer"
-                  whileHover={{ scale: 1.1 }}
+                  className="text-sm xl:text-base text-foreground hover:text-primary transition-colors duration-200 font-medium cursor-pointer px-2 py-1 rounded-md hover:bg-primary/5"
+                  whileHover={{ scale: 1.05 }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -84,18 +84,18 @@ export function Navigation() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <ThemeToggle />
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="glass-card hover:glass-card-hover"
+                className="glass-card hover:glass-card-hover h-9 w-9 sm:h-10 sm:w-10"
               >
-                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {isMobileMenuOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu className="h-4 w-4 sm:h-5 sm:w-5" />}
               </Button>
             </div>
           </div>
@@ -104,7 +104,7 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden"
+            className="lg:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -115,22 +115,21 @@ export function Navigation() {
               {/* Backdrop for dropdown */}
               <div className="absolute inset-0 bg-background/90 backdrop-blur-sm -z-10" />
 
-              <div className="relative glass-card border border-border/50 overflow-hidden">
+              <div className="relative glass-card border border-border/50 overflow-hidden mx-2 rounded-xl">
                 <div className="flex flex-col">
                   {navItems.map((item, index) => (
                     <div key={item.name}>
                       <button
                         onClick={() => scrollToSection(item.href)}
-                        className="w-full text-left px-6 py-4 text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
+                        className="w-full text-left px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
                       >
                         {item.name}
                       </button>
                       {index < navItems.length - 1 && (
-                        <hr className="border-border/30" />
+                        <hr className="border-border/30 mx-4" />
                       )}
                     </div>
                   ))}
-                  <hr className="border-border/30" />
                 </div>
               </div>
             </div>

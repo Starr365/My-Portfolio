@@ -68,7 +68,7 @@ export function SkillsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="skills" className="py-24 px-15 bg-muted/5 relative overflow-hidden" ref={ref}>
+    <section id="skills" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-muted/5 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"
@@ -139,15 +139,15 @@ export function SkillsSection() {
         </motion.div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-0">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-card text-sm font-medium mb-6 border border-primary/20"
+            className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-card text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-primary/20"
             whileHover={{ scale: 1.05, borderColor: "rgb(var(--primary) / 0.4)" }}
           >
             <motion.div
@@ -160,7 +160,7 @@ export function SkillsSection() {
                 scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
               }}
             >
-              <Zap className="w-4 h-4 text-primary" />
+              <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
             </motion.div>
             <span>My expertise</span>
             <motion.div
@@ -175,11 +175,11 @@ export function SkillsSection() {
                 delay: 0.5,
               }}
             >
-              <Sparkles className="w-4 h-4 text-secondary" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
             </motion.div>
           </motion.div>
           <motion.h2
-            className="text-5xl md:text-6xl font-bold text-foreground mb-6 neon-text"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 neon-text"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -187,7 +187,7 @@ export function SkillsSection() {
             Skills & Technologies
           </motion.h2>
           <motion.p
-            className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -196,7 +196,7 @@ export function SkillsSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -209,7 +209,7 @@ export function SkillsSection() {
                 stiffness: 100,
               }}
             >
-              <Card className="p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group cursor-pointer relative overflow-hidden h-full">
+              <Card className="p-4 sm:p-6 lg:p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group cursor-pointer relative overflow-hidden h-full mx-2 sm:mx-0">
                 <motion.div
                   className={`absolute inset-0 rounded-lg bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                   animate={{
@@ -231,17 +231,17 @@ export function SkillsSection() {
                   />
                 </div>
 
-                <div className="flex flex-col items-center text-center space-y-6 relative z-10">
+                <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6 relative z-10">
                   <div className="relative">
                     <motion.div
-                      className="p-6 rounded-2xl web3-gradient group-hover:scale-110 transition-all duration-300 shadow-lg relative"
+                      className="p-4 sm:p-6 rounded-2xl web3-gradient group-hover:scale-110 transition-all duration-300 shadow-lg relative"
                       whileHover={{
                         rotate: [0, -5, 5, 0],
                         scale: 1.15,
                       }}
                       transition={{ duration: 0.5 }}
                     >
-                      <skill.icon className="w-10 h-10 text-primary relative z-10" />
+                      <skill.icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary relative z-10" />
                       <motion.div
                         className="absolute inset-0 rounded-2xl border-2 border-primary/30"
                         animate={{
@@ -275,14 +275,14 @@ export function SkillsSection() {
                   </div>
                   <div>
                     <motion.h3
-                      className="font-bold text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300"
+                      className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground group-hover:text-primary transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                     >
                       {skill.name}
                     </motion.h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{skill.description}</p>
+                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">{skill.description}</p>
                     <motion.div
-                      className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20"
+                      className="text-xs font-medium text-primary bg-primary/10 px-2 sm:px-3 py-1 rounded-full border border-primary/20"
                       whileHover={{ scale: 1.05, backgroundColor: "rgb(var(--primary) / 0.2)" }}
                     >
                       {skill.level}% Proficiency

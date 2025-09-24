@@ -32,7 +32,7 @@ export function AboutSection() {
   }
 
   return (
-    <section id="about" className="py-24 px-4 bg-background relative overflow-hidden" ref={ref}>
+    <section id="about" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
@@ -94,15 +94,15 @@ export function AboutSection() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-0">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card text-sm font-medium mb-6 border border-primary/20"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-card text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-primary/20"
             variants={itemVariants}
             whileHover={{ scale: 1.05, borderColor: "rgb(var(--primary) / 0.4)" }}
           >
@@ -110,51 +110,51 @@ export function AboutSection() {
               animate={{ rotate: 360 }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             >
-              <Sparkles className="w-4 h-4 text-primary" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
             </motion.div>
             <span>Get to know me</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             >
-              <Zap className="w-4 h-4 text-secondary" />
+              <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
             </motion.div>
           </motion.div>
-          <motion.h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 neon-text" variants={itemVariants}>
+          <motion.h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 neon-text" variants={itemVariants}>
             About Me
           </motion.h2>
-          <motion.p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed" variants={itemVariants}>
+          <motion.p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" variants={itemVariants}>
             I write code that transforms ideas into intuitive, responsive, and scalable web applications
             utilizing modern frameworks like Next.js, React.js, TypeScript, Tailwind CSS, JavaScript, and Vanilla CSS.
           </motion.p>
 
           {/* Resume Button */}
           <motion.div
-            className="flex justify-center mt-8"
+            className="flex justify-center mt-6 sm:mt-8"
             variants={itemVariants}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 onClick={() => window.open("https://docs.google.com/document/d/1OvzWZRpR0_SaOWEt0Xhap9_v6Imgm3a-/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
-                className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg border-0"
+                className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto max-w-xs sm:max-w-none"
               >
-                <FileText className="w-5 h-5 mr-2" />
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 View My Resume
               </Button>
             </motion.div>
           </motion.div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <motion.div
-            className="space-y-8 md:col-span-2"
+            className="space-y-6 sm:space-y-8 lg:col-span-2"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
             <motion.div variants={itemVariants}>
-              <Card className="p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative overflow-hidden">
+              <Card className="p-4 sm:p-6 lg:p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative overflow-hidden">
                 <motion.div
                   className="absolute inset-0 opacity-5"
                   animate={{
@@ -171,13 +171,13 @@ export function AboutSection() {
                     backgroundSize: "50px 50px",
                   }}
                 />
-                <div className="flex items-start gap-6 relative z-10">
+                <div className="flex items-start gap-4 sm:gap-6 relative z-10">
                   <motion.div
-                    className="p-4 rounded-xl web3-gradient relative"
+                    className="p-3 sm:p-4 rounded-xl web3-gradient relative flex-shrink-0"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <User className="w-8 h-8 text-background" />
+                    <User className="w-6 h-6 sm:w-8 sm:h-8 text-background" />
                     <motion.div
                       className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"
                       animate={{
@@ -192,10 +192,10 @@ export function AboutSection() {
                     />
                   </motion.div>
                   <div>
-                    <h3 className="font-bold text-2xl mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="font-bold text-lg sm:text-xl lg:text-2xl mb-3 sm:mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
                       Professional Journey
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-lg">
+                    <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                       My journey into tech began with a desire to solve real-world business challenges, and it has grown into a mission to create technology 
                       that empowers people and drives efficiency. Beyond writing code, I am an advocate for women in STEM, 
                       committed to breaking barriers and inspiring more women to thrive in technology. I am passionate about using technology to 
@@ -206,9 +206,9 @@ export function AboutSection() {
               </Card>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               <motion.div variants={itemVariants}>
-                <Card className="p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative overflow-hidden">
+                <Card className="p-4 sm:p-6 lg:p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative overflow-hidden">
                   <motion.div
                     className="absolute top-0 right-0 w-20 h-20 bg-secondary/10 rounded-full blur-xl"
                     animate={{
@@ -242,8 +242,8 @@ export function AboutSection() {
                       />
                     </motion.div>
                     <div>
-                      <h3 className="font-bold text-xl mb-3 text-foreground">Based in Nigeria</h3>
-                      <p className="text-muted-foreground leading-relaxed text-base">
+                      <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">Based in Nigeria</h3>
+                      <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                         Currently based in Enugu, Nigeria. I am continuously expanding my frontend development skills through innovative projects and 
                         cutting-edge learning opportunities. Look forward to exploring new horizons in the Web3 space.
                       </p>
@@ -253,7 +253,7 @@ export function AboutSection() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <Card className="p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative overflow-hidden">
+                <Card className="p-4 sm:p-6 lg:p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative overflow-hidden">
                   <motion.div
                     className="absolute bottom-0 left-0 w-16 h-16 bg-accent/10 rounded-full blur-lg"
                     animate={{

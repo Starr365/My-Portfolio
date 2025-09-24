@@ -59,7 +59,7 @@ export function ProjectsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="projects" className="py-24 px-4 bg-background relative overflow-hidden" ref={ref}>
+    <section id="projects" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
@@ -125,15 +125,15 @@ export function ProjectsSection() {
         </motion.div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-0">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-card text-sm font-medium mb-6 border border-primary/20"
+            className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-card text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-primary/20"
             whileHover={{ scale: 1.05, borderColor: "rgb(var(--primary) / 0.4)" }}
           >
             <motion.div
@@ -146,7 +146,7 @@ export function ProjectsSection() {
                 scale: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
               }}
             >
-              <Code2 className="w-4 h-4 text-primary" />
+              <Code2 className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
             </motion.div>
             <span>My work</span>
             <motion.div
@@ -161,11 +161,11 @@ export function ProjectsSection() {
                 delay: 0.5,
               }}
             >
-              <Sparkles className="w-4 h-4 text-secondary" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
             </motion.div>
           </motion.div>
           <motion.h2
-            className="text-5xl md:text-6xl font-bold text-foreground mb-6 neon-text"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 neon-text"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -173,7 +173,7 @@ export function ProjectsSection() {
             Featured Projects
           </motion.h2>
           <motion.p
-            className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -182,7 +182,7 @@ export function ProjectsSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -200,7 +200,7 @@ export function ProjectsSection() {
                 transition: { duration: 0.3 },
               }}
             >
-              <Card className="overflow-hidden glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative h-full">
+              <Card className="overflow-hidden glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative h-full mx-2 sm:mx-0">
                 <motion.div
                   className={`absolute inset-0 rounded-lg bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                   animate={{
@@ -217,7 +217,7 @@ export function ProjectsSection() {
                   <motion.img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110"
+                    className="w-full h-40 sm:h-48 object-cover transition-all duration-500 group-hover:scale-110"
                     style={{
                       filter: 'blur(1px)',
                     }}
@@ -351,7 +351,7 @@ export function ProjectsSection() {
                   </motion.div>
                 </div>
 
-                <div className="p-6 relative">
+                <div className="p-4 sm:p-6 relative">
                   <motion.div
                     className="absolute inset-0 opacity-5"
                     animate={{
@@ -371,13 +371,13 @@ export function ProjectsSection() {
 
                   <div className="relative z-10">
                     <motion.h3
-                      className="font-semibold text-xl mb-3 group-hover:text-primary transition-colors duration-300"
+                      className="font-semibold text-lg sm:text-xl mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-300"
                       whileHover={{ scale: 1.02 }}
                     >
                       {project.title}
                     </motion.h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <p className="text-muted-foreground mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {project.tags.map((tag, tagIndex) => (
                         <motion.div
                           key={tag}
@@ -388,7 +388,7 @@ export function ProjectsSection() {
                         >
                           <Badge
                             variant="secondary"
-                            className="bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 transition-all duration-300"
+                            className="bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 transition-all duration-300 text-xs sm:text-sm px-2 py-1"
                           >
                             {tag}
                           </Badge>
