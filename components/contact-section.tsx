@@ -66,8 +66,6 @@ export function ContactSection() {
      setIsSubmitting(false);
    }
  }
- 
- 
  const handleBackToForm = () => {
    setIsSuccess(false);
    setSubmitterName("");
@@ -78,7 +76,7 @@ export function ContactSection() {
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Let&apos;s Work Together</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let&apos;s connect and create something amazing together.
+            Have a role, freelance brief, or collaboration in mind? Let&apos;s connect and create something amazing together. Send a message—I&apos;ll reply within 24–48 hours.
           </p>
         </div>
 

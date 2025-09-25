@@ -2,7 +2,6 @@
 
 // Inspired by react-hot-toast library
 import * as React from 'react'
-import { Toaster } from "sonner"
 import { ToasterProps } from "sonner"
 
 const TOAST_LIMIT = 1
