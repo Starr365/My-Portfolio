@@ -11,44 +11,64 @@ import { useRef } from "react"
 
 const projects = [
     {
-    title: "EduLearn Platform",
+    title: "Dishcovery - Recipe Finder",
     description:
-      "An interactive education platform for students to access courses, track progress, and connect with peers.",
-    image: "/ascendix.jpg",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://ascendix-client.vercel.app/",
-    githubUrl: "https://github.com/Starr365",
+      "A recipe finder for searching recipes by name or ingredient, mark favorites, and filter to see your favorites only.",
+    image: "/dishcovery.jpg",
+    tags: ["React", "Tailwind CSS", "TypeScript", "Local Storage", "Framer Motion"],
+    liveUrl: "https://dishcovery-lilac.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Dishcovery",
     gradient: "from-indigo-500 to-purple-500",
   },
     {
-    title: "Obodofarm AgriTech",
+    title: "Obodofarm - AgriTech",
     description:
       "A hackathon-winning agri platform that connects farmers to buyers and provides modern farming insights.",
     image: "/obodo.jpg",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
+    tags: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion", "Payment Integration"],
     liveUrl: "https://www.obodofarm.site/",
     githubUrl: "https://github.com/Starr365",
     gradient: "from-indigo-500 to-purple-500",
   },
  
     {
-    title: "Portfolio Website",
+    title: "Daily Muse - Mood Journaling Web App",
     description:
-      "A responsive portfolio website showcasing modern web development techniques and glassmorphism design.",
-    image: "/portfolio.jpg",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://github.com/Starr365",
-    githubUrl: "https://github.com/Starr365",
+      "A personal mental health tracker where users log daily moods, visualize trends, and get motivational quotes.",
+    image: "/daily-muse.jpg",
+    tags: ["React.js", "Tailwind CSS", "TypeScript", "Chart.js", "AI Model Integration"],
+    liveUrl: "https://daily-muse-eight.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Daily-Muse",
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    title: "MarketPro Dashboard",
+    title: "EcoPay - Fintech",
     description:
-      "A sleek marketing dashboard to track campaigns, analyze performance, and visualize insights in real time.",
-    image: "/zeuus.jpg",
-    tags: ["Next.js", "Tailwind CSS", "Chart.js"],
-    liveUrl: "https://frontend-react-zeuus-also.vercel.app/dashboard",
-    githubUrl: "https://github.com/Starr365",
+      "A hacakthon-winning web application that automatically calculates and offsets carbon emissions from your financial transactions.",
+    image: "/ecopay.jpg",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Wallet Connection", "API Integration", "Chart.js"],
+    liveUrl: "https://ecopay-eight.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Ecopay",
+    gradient: "from-indigo-500 to-purple-500",
+  },
+    {
+    title: "Impact Now - Social Impact Platform",
+    description:
+      "A mobile-responsive platform connecting donors, volunteers, and organizations for social impact projects.",
+    image: "/impact.jpg",
+    tags: ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Supabase",  "Chart.js"],
+    liveUrl: "https://impact-now-it.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Impact-Now--IT",
+    gradient: "from-indigo-500 to-purple-500",
+  },
+    {
+    title: "Bill-Ease - Landing Page",
+    description:
+      "a modern, user-friendly web application designed to simplify group bill splitting and expense management",
+    image: "/billease.jpg",
+    tags: ["HTML", "Vanilla CSS", "JavaScript"],
+    liveUrl: "https://starr365.github.io/Bill-Ease/",
+    githubUrl: "https://github.com/Starr365/Bill-Ease",
     gradient: "from-indigo-500 to-purple-500",
   },
 
