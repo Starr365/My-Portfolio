@@ -39,30 +39,21 @@ const experiences = [
 const education = [
   {
     degree: "Bachelor of Science in Computer Science",
-    institution: "University Name",
+    institution: "University of Nigeria, Nsukka",
     period: "2020 - 2024",
-    location: "Location",
+    location: "Nsukka, Enugu",
     description:
       "Studied core computer science concepts including data structures, algorithms, software engineering, and web development.",
     skills: ["Data Structures", "Algorithms", "Web Development", "Software Engineering"],
   },
   {
-    degree: "Full Stack Web Development Certificate",
-    institution: "Online Learning Platform",
+    degree: "Frontend Development  ",
+    institution: "Scrimba Learning Platform",
     period: "2022 - 2023",
     location: "Remote",
     description:
-      "Completed comprehensive bootcamp covering frontend and backend technologies, building production-ready applications.",
-    skills: ["Frontend", "Backend", "Databases", "API Development"],
-  },
-  {
-    degree: "AWS Cloud Practitioner",
-    institution: "Amazon Web Services",
-    period: "2024",
-    location: "Remote",
-    description:
-      "Certified in cloud computing fundamentals, understanding AWS services, architecture, and best practices.",
-    skills: ["Cloud Computing", "AWS", "Infrastructure", "Security"],
+      "Completed comprehensive bootcamp covering frontend technologies, building production-ready applications.",
+    skills: ["Frontend development","API Integration", "Version Control" ,"Responsive Design", ],
   },
 ]
 
@@ -338,7 +329,7 @@ export function ExperienceSection() {
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 neon-text">
-            Experience & <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">Education</span>
+            Experience & Education
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
             My journey in technology and continuous learning growth
