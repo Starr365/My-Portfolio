@@ -311,8 +311,8 @@ export function ProjectsSection() {
                   </div>
 
                   <motion.div
-                    className="absolute bottom-4 left-4 right-4 opacity-0 hover:opacity-100 transition-all duration-300"
-                    initial={{ y: 20, opacity: 0 }}
+                    className="absolute bottom-4 left-4 right-4 opacity-100 transition-all duration-300"
+                    initial={{ y: 0, opacity: 1 }}
                     whileHover={{ y: 0, opacity: 1 }}
                   >
                     <div className="flex gap-3">

@@ -158,7 +158,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <TypewriterText text="Hi, I'm Nzeribe Mmesoma" delay={800} />
+              <TypewriterText text="Nzeribe Mmesoma" delay={800} />
               <motion.span
                 className="block text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl web3-gradient bg-clip-text text-transparent mt-1 sm:mt-2"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -197,7 +197,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              I build functional, scalable, and user-friendly websites from concept to code — transforming ideas into seamless
+              I build functional, scalable, and user-friendly websites from concept to code; transforming ideas into seamless
               digital experiences using cutting-edge technologies, modern frameworks, and pixel-perfect design.
             </motion.p>
 
@@ -426,7 +426,8 @@ export function HeroSection() {
                     <Image
                       src="/Animated me.png"
                       alt="Nzeribe Mmesoma Stella - Frontend Developer"
-                      layout="fill"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>

@@ -76,7 +76,7 @@ export function ContactSection() {
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Let&apos;s Work Together</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have a role, freelance brief, or collaboration in mind? Let&apos;s connect and create something amazing together. Send a message—I&apos;ll reply within 24–48 hours.
+            Have a role, freelance brief, or collaboration in mind? Let&apos;s connect and create something amazing together. Send a message, I&apos;ll reply within 24–48 hours.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export function ContactSection() {
                   <FaLinkedin className="w-6 h-6 text-secondary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">FaLinkedin</h4>
+                  <h4 className="font-semibold">Linkedin</h4>
                   <p className="text-muted-foreground">Connect with me professionally</p>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export function ContactSection() {
                   <FaGithub className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">FaGithub</h4>
+                  <h4 className="font-semibold">Github</h4>
                   <p className="text-muted-foreground">Check out my code repositories</p>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export function ContactSection() {
                   variant="outline"
                   size="icon"
                   onClick={() => window.open("https://x.com/starr_o25?t=nxNCX4BgUDAwLW3J8ihPiA&s=09", "_blank")}
-                  className="rounded-full hover-glow transition-all duration-300 bg-transparent hover:bg-blue-500/10 hover:border-blue-500/50"
+                  className="rounded-full hover-glow transition-all duration-300 bg-transparent"
                 >
                   <FaXTwitter className="w-5 h-5" />
                 </Button>
@@ -199,7 +199,7 @@ export function ContactSection() {
                   variant="outline"
                   size="icon"
                   onClick={() => window.open("https://github.com/Starr365", "_blank")}
-                  className="rounded-full hover-glow transition-all duration-300 bg-transparent"
+                  className="rounded-full hover-glow transition-all duration-300 bg-transparent "
                 >
                   <FaGithub className="w-5 h-5" />
                 </Button>
