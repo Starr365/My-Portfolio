@@ -339,7 +339,7 @@ export function ProjectsSection() {
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Button
                           size="sm"
-                          className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                          className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
                           onClick={(e) => {
                             e.stopPropagation();
                             if (project.liveUrl && project.liveUrl !== "@components/HeroSection.tsx") {
@@ -354,8 +354,7 @@ export function ProjectsSection() {
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Button
                           size="sm"
-                          variant="outline"
-                          className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                          className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
                           onClick={(e) => {
                             e.stopPropagation();
                             if (project.githubUrl) {
