@@ -316,7 +316,7 @@ export function ExperienceSection() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-primary/20 mb-6 hover:border-primary/40 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 hover:border-primary/40 transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
           >
             <motion.div
@@ -410,7 +410,7 @@ export function ExperienceSection() {
               <motion.button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`flex-1 relative py-3 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`flex-1 relative py-3 px-4 rounded-md font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
                   activeTab === key
                     ? "bg-gradient-to-br from-primary/40 to-primary/20 text-primary border border-primary/50"
                     : "bg-white/5 text-muted-foreground border border-white/10 hover:border-white/20"
