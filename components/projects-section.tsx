@@ -10,7 +10,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 
 const projects = [
-    {
+  {
     title: "Dishcovery - Recipe Finder",
     description:
       "A recipe finder for searching recipes by name or ingredient, mark favorites, and filter to see your favorites only.",
@@ -20,7 +20,7 @@ const projects = [
     githubUrl: "https://github.com/Starr365/Dishcovery",
     gradient: "from-indigo-500 to-purple-500",
   },
-    {
+  {
     title: "Obodofarm - AgriTech",
     description:
       "A hackathon-winning agri platform that connects farmers to buyers and provides modern farming insights.",
@@ -30,15 +30,14 @@ const projects = [
     githubUrl: "https://github.com/Starr365",
     gradient: "from-indigo-500 to-purple-500",
   },
- 
-    {
-    title: "Daily Muse - Mood Journaling Web App",
+  {
+    title: "Impact For Good WebApp",
     description:
-      "A personal mental health tracker where users log daily moods, visualize trends, and get motivational quotes.",
-    image: "/daily-muse.jpg",
-    tags: ["React.js", "Tailwind CSS", "TypeScript", "Chart.js", "AI Model Integration"],
-    liveUrl: "https://daily-muse-eight.vercel.app/",
-    githubUrl: "https://github.com/Starr365/Daily-Muse",
+      "Impact For Good is a full-stack social impact webapp designed to connect donors, volunteers, and non-profit organizations through a unified, role-based platform.",
+    image: "/impact.jpg",
+    tags: ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Supabase", "Rechart.js"],
+    liveUrl: "https://impact-now-it.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Impact-Now--IT",
     gradient: "from-indigo-500 to-purple-500",
   },
   {
@@ -51,17 +50,17 @@ const projects = [
     githubUrl: "https://github.com/Starr365/Ecopay",
     gradient: "from-indigo-500 to-purple-500",
   },
-    {
-    title: "Impact Now - Social Impact Platform",
+  {
+    title: "Daily Muse - Mood Journaling Web App",
     description:
-      "A mobile-responsive platform connecting donors, volunteers, and organizations for social impact projects.",
-    image: "/impact.jpg",
-    tags: ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Supabase",  "Chart.js"],
-    liveUrl: "https://impact-now-it.vercel.app/",
-    githubUrl: "https://github.com/Starr365/Impact-Now--IT",
+      "A personal mental health tracker where users log daily moods, visualize trends, and get motivational quotes.",
+    image: "/daily-muse.jpg",
+    tags: ["React.js", "Tailwind CSS", "TypeScript", "Chart.js", "AI Model Integration"],
+    liveUrl: "https://daily-muse-eight.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Daily-Muse",
     gradient: "from-indigo-500 to-purple-500",
   },
-    {
+  {
     title: "Bill-Ease - Landing Page",
     description:
       "a modern, user-friendly web application designed to simplify group bill splitting and expense management",
