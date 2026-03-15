@@ -1,75 +1,101 @@
 # Personal Portfolio of Nzeribe Mmesoma Stella ✨
 
-A dynamic and visually engaging personal portfolio built with Next.js, TypeScript, and Tailwind CSS. This project showcases my skills and projects through a modern, responsive interface featuring smooth animations powered by Framer Motion and a sleek glassmorphism design.
-
-## Features
-
--   **Dynamic UI & Animations**: Fluid animations and interactive elements created with Framer Motion provide a rich user experience.
--   **Responsive Design**: The layout is fully responsive, ensuring a seamless experience on all devices, from mobile phones to desktops.
--   **Component-Based Architecture**: Developed using React and Next.js, the project is modular, scalable, and easy to maintain.
--   **Theme Toggling**: Includes a dark/light mode toggle to suit user preference, with styles managed by `next-themes`.
--   **Interactive Sections**: Features dedicated sections for About, Skills, Projects, Experience, and Testimonials to provide a comprehensive overview of my professional profile.
--   **Functional Contact Form**: An integrated contact form using Web3Forms allows visitors to send messages directly.
-
-## Technologies Used
-
-| Technology                                                    | Description                                            |
-| ------------------------------------------------------------- | ------------------------------------------------------ |
-| [**Next.js**](https://nextjs.org/)                            | React framework for server-side rendering and static sites. |
-| [**TypeScript**](https://www.typescriptlang.org/)             | Statically typed superset of JavaScript.               |
-| [**Tailwind CSS**](https://tailwindcss.com/)                  | A utility-first CSS framework for rapid UI development.  |
-| [**Framer Motion**](https://www.framer.com/motion/)           | A production-ready motion library for React.           |
-| [**Shadcn/UI**](https://ui.shadcn.com/)                       | Re-usable components built using Radix UI and Tailwind CSS. |
-| [**ESLint**](https://eslint.org/)                             | Pluggable and configurable linter tool for code quality. |
-
-## Usage
-
-To run this project locally, follow these steps:
-
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/your-username/my-portfolio.git
-    cd my-portfolio
-    ```
-
-2.  **Install dependencies:**
-    This project uses `npm` as the package manager.
-    ```sh
-    npm install
-    ```
-
-3.  **Set up environment variables:**
-    The contact form requires an access key from [Web3Forms](https://web3forms.com/). Create a `.env.local` file in the root of the project and add your key:
-
-    ```env
-    NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=YOUR_ACCESS_KEY_HERE
-    ```
-
-    You will need to update the `contact-section.tsx` file to use this environment variable instead of the hardcoded key.
-
-4.  **Run the development server:**
-    ```sh
-    npm run dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## License
-
-Copyright © 2024 Nzeribe Mmesoma Stella. All rights reserved.
-
-## Author
-
-**Nzeribe Mmesoma Stella**
-
--   **Email**: [mmesomanzeribe@gmail.com](mailto:mmesomanzeribe@gmail.com)
--   **LinkedIn**: [Mmesoma Nzeribe](https://www.linkedin.com/in/mmesoma-nzeribe)
--   **X (Twitter)**: [@starr\_o25](https://x.com/starr_o25?t=nxNCX4BgUDAwLW3J8ihPiA&s=09)
+A premium, highly interactive personal portfolio built using **React 19**, **Next.js 16**, and **TypeScript**. This project serves as a comprehensive digital resume, showcasing a professional journey through tech, creative project galleries, and technical expertise. Built with a mobile-first approach, it features a sophisticated **Glassmorphism design** and vibrant, performant animations.
 
 ---
+
+## Project Overview
+It targets potential employers, collaborators, and clients, providing a seamless interface to explore my professional background, project history, and core competencies. The application is built to be fast, accessible, and visually stunning, reflecting my commitment to high-quality frontend engineering.
+
+---
+
+## Key Features & Challenges
+*   **Dynamic Visuals & Motion Architecture**: Implemented a complex motion system using **Framer Motion**, including scroll-triggered entry animations, background parallax effects, and micro-interactions.
+*   **Performance Optimization**: Solved the challenge of maintaining high Core Web Vitals while using heavy animations by implementing **Code Splitting (Dynamic Imports)** and **Optimized Image Processing** via Next.js.
+*   **Responsive Integrity**: Built a fully adaptive grid system that maintains visual fidelity from ultra-wide monitors down to standard mobile devices.
+
+---
+
+## Technologies Used
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
+*   **Framework**: Next.js 16 (App Router)
+*   **Frontend**: React 19, TypeScript
+*   **Styling**: Tailwind CSS 4, Lucide React
+*   **State / UI**: Shadcn/UI, Next-Themes (Dark Mode)
+*   **Deployment**: Vercel
+
+---
+
+## Architecture Overview
+The project follows a modular **Atomic Design** philosophy. Components are separated into logical layers:
+*   **Sectional Components**: High-level wrappers for page segments (Hero, About, Projects).
+*   **UI Primitives**: Base-level reusable components (Buttons, Cards, Inputs).
+*   **Service Layer**: External logic handling (e.g., Supabase client, Web3Forms integration).
+
+I chose the **App Router** for improved routing performance and the ability to leverage **Server Components** for static sections, reducing the client-side JavaScript footprint.
+
+---
+
+## Technical Decisions
+1.  **Tailwind CSS 4**: Selected for its JIT compiler and robust design token system, enabling the complex OKLCH-based color palette and glassmorphism utilities.
+2.  **Code Splitting**: Used `next/dynamic` to lazy-load heavy sections like `Projects` and `Contact`, ensuring the "Above the Fold" content (Hero) is interactive almost instantly.
+
+---
+
+## Setup & Installation
+Follow these steps to run the project locally:
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/Starr365/My-Portfolio.git
+    cd My-Portfolio
+    ```
+
+2.  **Install dependencies:**
+    ```sh
+    npm install
+    ```
+
+3.  **Environment Variables:**
+    Create a `.env.local` file in the root directory:
+    ```env
+    NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_access_key
+    ```
+
+4.  **Run Development Server:**
+    ```sh
+    npm run dev
+    ```
+
+---
+
+## 7. Folder Structure
+```text
+my-portfolio/
+├── app/            # Next.js App Router (Layouts, Pages, Globals)
+├── components/     # UI Sections and Reusable Components
+│   └── ui/         # Shadcn/UI primitives
+├── lib/            # Utilities and Service Clients
+├── hooks/          # Custom Reusable React Hooks
+├── public/         # Static Assets (Images, Icons)
+└── styles/         # Global Stylesheets
+```
+
+---
+
+## Performance & Accessibility
+*   **Image Optimization**: All images utilize `next/image` with proper `fill` and `sizes` attributes for responsive loading.
+*   **A11y (Accessibility)**: Implementation of `ARIA roles`, descriptive `labels`, and semantic HTML5 tags ensures WCAG AA compliance.
+*   **Hydration Control**: Used dynamic imports to prevent hydration mismatches and prioritize interactive elements.
+
+## License & Author
+Copyright © 2026 **Nzeribe Mmesoma Stella**. All rights reserved.
+
+- **LinkedIn**: [Mmesoma Nzeribe](https://www.linkedin.com/in/mmesoma-nzeribe)
+- **GitHub**: [Starr365](https://github.com/Starr365)
+- **X (Twitter)**: [@starr_o25](https://x.com/starr_o25)

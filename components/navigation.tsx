@@ -57,12 +57,16 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-            <div className="relative flex items-center justify-center w-auto h-10 sm:h-12 px-2 sm:px-3 rounded-xl sm:rounded-2xl bg-gradient-to-br from-background/60 via-background/40 to-background/20 shadow-lg border border-primary/20 transition-all duration-300 dark:from-primary/60 dark:via-primary/40 dark:to-accent/60">
+            <button 
+              onClick={() => scrollToSection("#home")} 
+              aria-label="Back to top"
+              className="relative flex items-center justify-center w-auto h-10 sm:h-12 px-2 sm:px-3 rounded-xl sm:rounded-2xl bg-gradient-to-br from-background/60 via-background/40 to-background/20 shadow-lg border border-primary/20 transition-all duration-300 dark:from-primary/60 dark:via-primary/40 dark:to-accent/60 cursor-pointer"
+            >
               {/* Logo with inverted theme styling */}
               <span className="text-base sm:text-lg font-black bg-gradient-to-br from-primary/80 via-primary/60 to-accent/60 bg-clip-text text-transparent drop-shadow-sm dark:from-background/80 dark:via-background/60 dark:to-background/40">
                 {MyLogo}
               </span>
-            </div>
+            </button>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -93,6 +97,8 @@ export function Navigation() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
                 className="glass-card hover:glass-card-hover h-9 w-9 sm:h-10 sm:w-10"
               >
                 {isMobileMenuOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu className="h-4 w-4 sm:h-5 sm:w-5" />}

@@ -5,17 +5,20 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Zap, Sparkles, Code2, Layers } from "lucide-react"
 import { FaGithub } from 'react-icons/fa';
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import Image from "next/image"
+
+const MotionImage = motion(Image)
 
 const projects = [
   {
     title: "Dishcovery - Recipe Finder",
     description:
-      "A recipe finder for searching recipes by name or ingredient, mark favorites, and filter to see your favorites only.",
+      "A modern recipe discovery app powered by TheMealDB API with favorites management. Optimized with TanStack Query for caching and deduplication.",
     image: "/dishcovery.jpg",
-    tags: ["React", "Tailwind CSS", "TypeScript", "Local Storage", "Framer Motion"],
+    tags: ["React", "TailwindCSS", "TanStack Query", "API Integration", "Local Storage"],
     liveUrl: "https://dishcovery-lilac.vercel.app/",
     githubUrl: "https://github.com/Starr365/Dishcovery",
     gradient: "from-indigo-500 to-purple-500",
@@ -75,73 +78,79 @@ const projects = [
 
 export function ProjectsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref)
+  const prefersReducedMotion = useReducedMotion()
+  const shouldAnimate = isInView && !prefersReducedMotion
 
   return (
     <section id="projects" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, -50, 0],
-            y: [0, -80, 60, 0],
-            scale: [1, 1.5, 0.8, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 left-1/3 w-48 h-48 bg-secondary/5 rounded-full blur-2xl"
-          animate={{
-            x: [0, -70, 40, 0],
-            y: [0, 90, -30, 0],
-            scale: [1, 0.6, 1.4, 1],
-            rotate: [0, -120, -240, -360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 3,
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          animate={{ rotate: [0, 360] }}
-          transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-        >
-          <div className="relative w-60 h-60">
-            {[Code2, Layers, Zap, Sparkles].map((Icon, index) => (
-              <motion.div
-                key={index}
-                className="absolute w-4 h-4 text-primary/20"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transformOrigin: "0 0",
-                }}
-                animate={{
-                  rotate: [0, -360],
-                  x: [0, Math.cos((index * Math.PI) / 2) * 80],
-                  y: [0, Math.sin((index * Math.PI) / 2) * 80],
-                  scale: [1, 1.5, 1],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "linear",
-                  delay: index * 1,
-                }}
-              >
-                <Icon className="w-full h-full" />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {shouldAnimate && (
+          <>
+            <motion.div
+              className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
+              animate={{
+                x: [0, 100, -50, 0],
+                y: [0, -80, 60, 0],
+                scale: [1, 1.5, 0.8, 1],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 25,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/3 left-1/3 w-48 h-48 bg-secondary/5 rounded-full blur-2xl"
+              animate={{
+                x: [0, -70, 40, 0],
+                y: [0, 90, -30, 0],
+                scale: [1, 0.6, 1.4, 1],
+                rotate: [0, -120, -240, -360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 3,
+              }}
+            />
+            <motion.div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            >
+              <div className="relative w-60 h-60">
+                {[Code2, Layers, Zap, Sparkles].map((Icon, index) => (
+                  <motion.div
+                    key={index}
+                    className="absolute w-4 h-4 text-primary/20"
+                    style={{
+                      top: "50%",
+                      left: "50%",
+                      transformOrigin: "0 0",
+                    }}
+                    animate={{
+                      rotate: [0, -360],
+                      x: [0, Math.cos((index * Math.PI) / 2) * 80],
+                      y: [0, Math.sin((index * Math.PI) / 2) * 80],
+                      scale: [1, 1.5, 1],
+                    }}
+                    transition={{
+                      duration: 20,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "linear",
+                      delay: index * 1,
+                    }}
+                  >
+                    <Icon className="w-full h-full" />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-0">
@@ -233,18 +242,22 @@ export function ProjectsSection() {
                 />
 
                 <div className="relative overflow-hidden">
-                  <motion.img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-40 sm:h-48 object-cover transition-all duration-500 group-hover:scale-110"
-                    style={{
-                      filter: 'blur(1px)',
-                    }}
-                    whileHover={{
-                      scale: 1.1,
-                      filter: 'blur(0px)',
-                    }}
-                  />
+                  <div className="relative w-full h-40 sm:h-48 overflow-hidden">
+                    <MotionImage
+                      src={project.image || "/placeholder.svg"}
+                      alt={`Screenshot of ${project.title}`}
+                      fill
+                      className="object-cover transition-all duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{
+                        filter: 'blur(1px)',
+                      }}
+                      whileHover={{
+                        scale: 1.1,
+                        filter: 'blur(0px)',
+                      }}
+                    />
+                  </div>
 
                   {/* Enhanced glass overlay on image */}
                   <motion.div
@@ -336,34 +349,36 @@ export function ProjectsSection() {
                   >
                     <div className="flex gap-3">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Button
-                          size="sm"
-                          className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if (project.liveUrl && project.liveUrl !== "@components/HeroSection.tsx") {
-                              window.open(project.liveUrl, '_blank');
-                            }
-                          }}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Demo
-                        </Button>
+                          <Button
+                            size="sm"
+                            className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                            aria-label={`View live demo for ${project.title}`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (project.liveUrl && project.liveUrl !== "@components/HeroSection.tsx") {
+                                window.open(project.liveUrl, '_blank');
+                              }
+                            }}
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Live Demo
+                          </Button>
                       </motion.div>
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Button
-                          size="sm"
-                          className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if (project.githubUrl) {
-                              window.open(project.githubUrl, '_blank');
-                            }
-                          }}
-                        >
-                          <FaGithub className="w-4 h-4 mr-2" />
-                          Source
-                        </Button>
+                          <Button
+                            size="sm"
+                            className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                            aria-label={`View source code for ${project.title} on GitHub`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (project.githubUrl) {
+                                window.open(project.githubUrl, '_blank');
+                              }
+                            }}
+                          >
+                            <FaGithub className="w-4 h-4 mr-2" />
+                            Source
+                          </Button>
                       </motion.div>
                     </div>
                   </motion.div>
