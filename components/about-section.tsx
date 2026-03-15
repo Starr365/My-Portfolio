@@ -3,13 +3,15 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, User, Sparkles, Heart, Zap, FileText } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView, Variants } from "framer-motion"
 import { useRef } from "react"
 
 export function AboutSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref)
+  const prefersReducedMotion = useReducedMotion()
+  const shouldAnimate = isInView && !prefersReducedMotion
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,64 +36,68 @@ export function AboutSection() {
   return (
     <section id="about" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
-          animate={{
-            y: [0, -50, 30, 0],
-            x: [0, 20, -10, 0],
-            scale: [1, 1.3, 0.8, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-20 w-48 h-48 bg-secondary/10 rounded-full blur-2xl"
-          animate={{
-            y: [0, 40, -25, 0],
-            x: [0, -30, 15, 0],
-            scale: [1, 0.6, 1.4, 1],
-            rotate: [0, -180, -360],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 3,
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/4 w-4 h-4 bg-accent/60 rounded-full"
-          animate={{
-            y: [0, -100, 50, 0],
-            opacity: [0.6, 1, 0.3, 0.6],
-            scale: [1, 2, 0.5, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
-        <motion.div
-          className="absolute top-3/4 right-1/3 w-6 h-6 bg-primary/40 rounded-full"
-          animate={{
-            x: [0, 80, -40, 0],
-            y: [0, -60, 30, 0],
-            rotate: [0, 270, 540],
-            scale: [1, 1.5, 0.8, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-        />
+        {shouldAnimate && (
+          <>
+            <motion.div
+              className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+              animate={{
+                y: [0, -50, 30, 0],
+                x: [0, 20, -10, 0],
+                scale: [1, 1.3, 0.8, 1],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.div
+              className="absolute bottom-20 left-20 w-48 h-48 bg-secondary/10 rounded-full blur-2xl"
+              animate={{
+                y: [0, 40, -25, 0],
+                x: [0, -30, 15, 0],
+                scale: [1, 0.6, 1.4, 1],
+                rotate: [0, -180, -360],
+              }}
+              transition={{
+                duration: 15,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 3,
+              }}
+            />
+            <motion.div
+              className="absolute top-1/2 left-1/4 w-4 h-4 bg-accent/60 rounded-full"
+              animate={{
+                y: [0, -100, 50, 0],
+                opacity: [0.6, 1, 0.3, 0.6],
+                scale: [1, 2, 0.5, 1],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            />
+            <motion.div
+              className="absolute top-3/4 right-1/3 w-6 h-6 bg-primary/40 rounded-full"
+              animate={{
+                x: [0, 80, -40, 0],
+                y: [0, -60, 30, 0],
+                rotate: [0, 270, 540],
+                scale: [1, 1.5, 0.8, 1],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            />
+          </>
+        )}
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-0">
@@ -134,11 +140,12 @@ export function AboutSection() {
             variants={itemVariants}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                onClick={() => window.open("https://docs.google.com/document/d/1OvzWZRpR0_SaOWEt0Xhap9_v6Imgm3a-/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
-                className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto max-w-xs sm:max-w-none"
-              >
+                <Button
+                  size="lg"
+                  onClick={() => window.open("https://docs.google.com/document/d/1OvzWZRpR0_SaOWEt0Xhap9_v6Imgm3a-/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
+                  aria-label="View and download my professional resume"
+                  className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
+                >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 View My Resume
               </Button>

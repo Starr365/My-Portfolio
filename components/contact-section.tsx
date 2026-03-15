@@ -183,6 +183,7 @@ export function ContactSection() {
                   variant="outline"
                   size="icon"
                   onClick={() => window.open("https://x.com/starr_o25?t=nxNCX4BgUDAwLW3J8ihPiA&s=09", "_blank")}
+                  aria-label="Follow me on X (formerly Twitter)"
                   className="rounded-full hover-glow transition-all duration-300 bg-transparent"
                 >
                   <FaXTwitter className="w-5 h-5" />
@@ -191,6 +192,7 @@ export function ContactSection() {
                   variant="outline"
                   size="icon"
                   onClick={() => window.open("https://www.linkedin.com/in/mmesoma-nzeribe", "_blank")}
+                  aria-label="Connect with me on LinkedIn"
                   className="rounded-full hover-glow transition-all duration-300 bg-transparent"
                 >
                   <FaLinkedin className="w-5 h-5" />
@@ -199,6 +201,7 @@ export function ContactSection() {
                   variant="outline"
                   size="icon"
                   onClick={() => window.open("https://github.com/Starr365", "_blank")}
+                  aria-label="View my work on GitHub"
                   className="rounded-full hover-glow transition-all duration-300 bg-transparent "
                 >
                   <FaGithub className="w-5 h-5" />
@@ -207,6 +210,7 @@ export function ContactSection() {
                   <Button
                     variant="outline"
                     size="icon"
+                    aria-label="Send me an email"
                     className="rounded-full hover-glow transition-all duration-300 bg-transparent"
                   >
                   <Mail className="w-5 h-5" />

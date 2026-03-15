@@ -14,7 +14,7 @@ import {
   Layers,
   Terminal,
 } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 
@@ -65,78 +65,84 @@ const skills = [
 
 export function SkillsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref)
+  const prefersReducedMotion = useReducedMotion()
+  const shouldAnimate = isInView && !prefersReducedMotion
 
   return (
     <section id="skills" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-muted/5 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"
-          animate={{
-            y: [0, -60, 40, 0],
-            x: [0, 30, -20, 0],
-            scale: [1, 1.4, 0.8, 1],
-            rotate: [0, 120, 240, 360],
-          }}
-          transition={{
-            duration: 16,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"
-          animate={{
-            y: [0, 50, -30, 0],
-            x: [0, -40, 25, 0],
-            scale: [1, 0.7, 1.3, 1],
-            rotate: [0, -90, -180, -270, -360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          animate={{
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        >
-          <div className="relative w-40 h-40">
-            {[Cpu, Layers, Terminal, Zap].map((Icon, index) => (
-              <motion.div
-                key={index}
-                className="absolute w-6 h-6 text-primary/30"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transformOrigin: "0 0",
-                }}
-                animate={{
-                  rotate: [0, -360],
-                  x: [0, Math.cos((index * Math.PI) / 2) * 60],
-                  y: [0, Math.sin((index * Math.PI) / 2) * 60],
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "linear",
-                  delay: index * 0.5,
-                }}
-              >
-                <Icon className="w-full h-full" />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {shouldAnimate && (
+          <>
+            <motion.div
+              className="absolute top-1/4 left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"
+              animate={{
+                y: [0, -60, 40, 0],
+                x: [0, 30, -20, 0],
+                scale: [1, 1.4, 0.8, 1],
+                rotate: [0, 120, 240, 360],
+              }}
+              transition={{
+                duration: 16,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/4 right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"
+              animate={{
+                y: [0, 50, -30, 0],
+                x: [0, -40, 25, 0],
+                scale: [1, 0.7, 1.3, 1],
+                rotate: [0, -90, -180, -270, -360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            />
+            <motion.div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              animate={{
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 30,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "linear",
+              }}
+            >
+              <div className="relative w-40 h-40">
+                {[Cpu, Layers, Terminal, Zap].map((Icon, index) => (
+                  <motion.div
+                    key={index}
+                    className="absolute w-6 h-6 text-primary/30"
+                    style={{
+                      top: "50%",
+                      left: "50%",
+                      transformOrigin: "0 0",
+                    }}
+                    animate={{
+                      rotate: [0, -360],
+                      x: [0, Math.cos((index * Math.PI) / 2) * 60],
+                      y: [0, Math.sin((index * Math.PI) / 2) * 60],
+                    }}
+                    transition={{
+                      duration: 15,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "linear",
+                      delay: index * 0.5,
+                    }}
+                  >
+                    <Icon className="w-full h-full" />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-0">
@@ -222,7 +228,14 @@ export function SkillsSection() {
                   }}
                 />
 
-                <div className="absolute top-0 left-0 right-0 h-1 bg-muted/20 rounded-t-lg overflow-hidden">
+                <div 
+                  className="absolute top-0 left-0 right-0 h-1 bg-muted/20 rounded-t-lg overflow-hidden"
+                  role="progressbar"
+                  aria-valuenow={skill.level}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label={`${skill.name} proficiency level`}
+                >
                   <motion.div
                     className={`h-full bg-gradient-to-r ${skill.color}`}
                     initial={{ width: 0 }}
