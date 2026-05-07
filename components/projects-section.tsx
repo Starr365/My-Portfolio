@@ -36,7 +36,7 @@ const projects = [
   {
     title: "Impact For Good WebApp",
     description:
-      "Impact For Good is a full-stack social impact webapp designed to connect donors, volunteers, and non-profit organizations through a unified, role-based platform.",
+      "A full-stack social impact webapp designed to connect donors, volunteers, and non-profit organizations through a unified, role-based platform.",
     image: "/impact.jpg",
     tags: ["React", "Tailwind CSS", "TypeScript", "Framer Motion", "Supabase", "Rechart.js"],
     liveUrl: "https://impact-now-it.vercel.app/",
@@ -66,7 +66,7 @@ const projects = [
   {
     title: "Bill-Ease - Landing Page",
     description:
-      "a modern, user-friendly web application designed to simplify group bill splitting and expense management",
+      "A modern, user-friendly web application designed to simplify group bill splitting and expense management",
     image: "/billease.jpg",
     tags: ["HTML", "Vanilla CSS", "JavaScript"],
     liveUrl: "https://starr365.github.io/Bill-Ease/",
@@ -83,7 +83,7 @@ export function ProjectsSection() {
   const shouldAnimate = isInView && !prefersReducedMotion
 
   return (
-    <section id="projects" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
+    <section id="projects" className="pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
         {shouldAnimate && (
           <>
@@ -349,36 +349,36 @@ export function ProjectsSection() {
                   >
                     <div className="flex gap-3">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                          <Button
-                            size="sm"
-                            className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
-                            aria-label={`View live demo for ${project.title}`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (project.liveUrl && project.liveUrl !== "@components/HeroSection.tsx") {
-                                window.open(project.liveUrl, '_blank');
-                              }
-                            }}
-                          >
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Live Demo
-                          </Button>
+                        <Button
+                          size="sm"
+                          className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                          aria-label={`View live demo for ${project.title}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (project.liveUrl && project.liveUrl !== "@components/HeroSection.tsx") {
+                              window.open(project.liveUrl, '_blank');
+                            }
+                          }}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Live Demo
+                        </Button>
                       </motion.div>
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                          <Button
-                            size="sm"
-                            className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
-                            aria-label={`View source code for ${project.title} on GitHub`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (project.githubUrl) {
-                                window.open(project.githubUrl, '_blank');
-                              }
-                            }}
-                          >
-                            <FaGithub className="w-4 h-4 mr-2" />
-                            Source
-                          </Button>
+                        <Button
+                          size="sm"
+                          className="cursor-pointer bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm"
+                          aria-label={`View source code for ${project.title} on GitHub`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (project.githubUrl) {
+                              window.open(project.githubUrl, '_blank');
+                            }
+                          }}
+                        >
+                          <FaGithub className="w-4 h-4 mr-2" />
+                          Source
+                        </Button>
                       </motion.div>
                     </div>
                   </motion.div>

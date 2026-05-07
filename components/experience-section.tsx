@@ -8,52 +8,54 @@ import { useInView } from "framer-motion"
 
 const experiences = [
   {
-    role: "Frontend Developer — Team Obodofarm",
-    organization: "Hackathon Winner",
+    role: "Lead Frontend Developer",
+    organization: "HealthMate (ArchSaint Nexus)",
+    period: "Apr. 2026",
+    location: "Remote",
+    description:
+      "Spearheaded frontend development for HealthMate, delivering a responsive digital healthcare platform within a one-month timeline. Implemented and optimized the appointment booking system through backend API integration and enhanced user experience with Framer Motion animations, dark mode, and optimized loading states.",
+    skills: [
+      "Next.js", "Tailwind CSS", "TypeScript", "TanStack Query", "React Hook Form", "Framer Motion"
+    ],
+  },
+  {
+    role: "Junior Frontend Engineer",
+    organization: "Dwelix",
+    period: "Jan. 2026 - Mar. 2026",
+    location: "Remote",
+    description:
+      "Collaborated within a cross-functional team to build a PropTech platform from the ground up, delivering seven role-based dashboards using React, Next.js, and TypeScript. Architected scalable dashboard interfaces, integrated 320+ API endpoints with TanStack Query, and implemented complex forms and testing workflows to ensure seamless user experiences and reliable data rendering.",
+    skills: ["React", "Next.js", "TypeScript", "TanStack Query", "React Hook Form", "Playwright"],
+  },
+  {
+    role: "Frontend Developer",
+    organization: "Obodofarm (Hackathon Winner)",
     period: "August 2025",
     location: "Nigeria",
     description:
       "Collaborated with a team to design and implement a farm-to-market solution, developing the frontend interface that won first place in a competitive hackathon.",
-    skills: ["Team Collaboration", "Frontend Development", "UI/UX Implementation"],
-  },
-  {
-    role: "Frontend Developer",
-    organization: "Freelance & Open Source",
-    period: "2023 - Present",
-    location: "Remote",
-    description:
-      "Built and deployed responsive, user-friendly web applications using React, TypeScript, and Tailwind CSS, translating designs into scalable digital experiences.",
-    skills: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
-  },
-  {
-    role: "TechUp Mentee",
-    organization: "TechUp Africa",
-    period: "2025",
-    location: "Remote",
-    description:
-      "Selected as a mentee for the TechUp program, gaining hands-on experience in frontend development through mentorship, collaborative projects, and industry guidance through Scrimba platform.",
-    skills: ["Frontend Development", "Mentorship", "Collaboration", "Continuous Learning"],
+    skills: ["Team Collaboration", "Frontend Development", "Version Control", "API Integration"],
   },
 ]
 
 const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
+    degree: "B.Sc Computer Science",
     institution: "University of Nigeria, Nsukka",
-    period: "2020 - 2024",
+    period: "2022 - 2026",
     location: "Nsukka, Enugu",
     description:
       "Studied core computer science concepts including data structures, algorithms, software engineering, and web development.",
     skills: ["Data Structures", "Algorithms", "Web Development", "Software Engineering"],
   },
   {
-    degree: "Frontend Development  ",
-    institution: "Scrimba Learning Platform",
+    degree: "Frontend Development Course",
+    institution: "Scrimba",
     period: "2022 - 2023",
     location: "Remote",
     description:
-      "Completed comprehensive bootcamp covering frontend technologies, building production-ready applications.",
-    skills: ["Frontend development","API Integration", "Version Control" ,"Responsive Design", ],
+      "Completed comprehensive course covering frontend technologies, engineering principles, and modern best practices for building production-ready applications.",
+    skills: ["Frontend development", "API Integration", "Version Control", "Responsive Design",],
   },
 ]
 
@@ -410,11 +412,10 @@ export function ExperienceSection() {
               <motion.button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`flex-1 relative py-3 px-4 rounded-md font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
-                  activeTab === key
-                    ? "bg-gradient-to-br from-primary/40 to-primary/20 text-primary border border-primary/50"
-                    : "bg-white/5 text-muted-foreground border border-white/10 hover:border-white/20"
-                }`}
+                className={`flex-1 relative py-3 px-4 rounded-md font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${activeTab === key
+                  ? "bg-gradient-to-br from-primary/40 to-primary/20 text-primary border border-primary/50"
+                  : "bg-white/5 text-muted-foreground border border-white/10 hover:border-white/20"
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

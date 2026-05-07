@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import {  Sparkles, Zap, Code2 } from "lucide-react"
+import { Sparkles, Zap, Code2 } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
@@ -191,7 +191,7 @@ export function HeroSection() {
                 >
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                 </motion.div>
-                <span className="text-sm sm:text-base lg:text-lg">Frontend Engineer & Web3 Enthusiast</span>
+                <span className="text-sm sm:text-base lg:text-lg">Frontend Engineer || Web3 Builder</span>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
@@ -202,7 +202,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0 text-pretty leading-relaxed px-2 sm:px-0"
+              className="text-base sm:text-lg md:text-base text-muted-foreground mb-4 sm:mb-5 lg:mb-6 max-w-2xl mx-auto lg:mx-0 text-pretty leading-relaxed px-2 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
@@ -213,29 +213,28 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center mb-8 sm:mb-12 lg:mb-16"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center mb-6 sm:mb-10 lg:mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="lg"
-                    onClick={() => scrollToSection("#projects")}
-                    aria-label="View my projects and portfolio work"
-                    className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
-                  >
-                  <Zap className="w-5 h-5 mr-2" />
+                <Button
+                  size="lg"
+                  onClick={() => scrollToSection("#projects")}
+                  aria-label="View my projects and portfolio work"
+                  className="bg-blue-600 text-background opacity-95 shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg border-0 w-full sm:w-auto tracking-tight"
+                >
                   Explore My Work
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="lg"
-                    onClick={() => scrollToSection("#contact")}
-                    aria-label="Go to contact section to connect"
-                    className="bg-background/80 backdrop-blur-sm border-2 border-primary/30 text-foreground hover:bg-background hover:border-primary/60 hover:text-primary shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-md dark:bg-background/20 dark:border-primary/40 dark:hover:bg-background/40 dark:hover:border-primary/80 w-full sm:w-auto"
-                  >
+                <Button
+                  size="lg"
+                  onClick={() => scrollToSection("#contact")}
+                  aria-label="Go to contact section to connect"
+                  className="bg-background/80 backdrop-blur-sm border-2 border-primary/40 text-foreground hover:bg-background hover:border-primary/80 hover:text-primary shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg dark:bg-background/20 dark:border-primary/50 dark:hover:bg-background/40 dark:hover:border-primary/90 w-full sm:w-auto tracking-tight"
+                >
                   Let&apos;s Connect
                 </Button>
               </motion.div>

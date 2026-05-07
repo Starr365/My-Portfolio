@@ -11,15 +11,15 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Sarah Ogbonna",
-    role: "Senior Developer",
-    company: "Digital Innovations",
+    name: "Chinedu Martins",
+    role: "Software Developer",
+    company: "SoftBridge",
     content:
-      "Working with Mmesoma has been a great experience. She brings fresh perspectives to projects and has a strong grasp of modern web technologies.",
-    rating: 4,
+      "Mmesoma is a dedicated developer who is passionate about building great software. She's a quick learner and is always eager to take on new challenges.",
+    rating: 5,
   },
   {
-    name: "Ademide Emmanuel",
+    name: "Adewale Gabriel",
     role: "Full-Stack Developer",
     company: "The Engineering Network",
     content:

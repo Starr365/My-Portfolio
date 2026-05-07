@@ -34,7 +34,7 @@ export function AboutSection() {
   }
 
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-24 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
+    <section id="about" className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
         {shouldAnimate && (
           <>
@@ -140,12 +140,12 @@ export function AboutSection() {
             variants={itemVariants}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  size="lg"
-                  onClick={() => window.open("https://docs.google.com/document/d/1OvzWZRpR0_SaOWEt0Xhap9_v6Imgm3a-/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
-                  aria-label="View and download my professional resume"
-                  className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
-                >
+              <Button
+                size="lg"
+                onClick={() => window.open("https://docs.google.com/document/d/1OvzWZRpR0_SaOWEt0Xhap9_v6Imgm3a-/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
+                aria-label="View and download my professional resume"
+                className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
+              >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 View My Resume
               </Button>
@@ -203,9 +203,9 @@ export function AboutSection() {
                       Professional Journey
                     </h3>
                     <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                      My journey into tech began with a desire to solve real-world business challenges, and it has grown into a mission to create technology 
-                      that empowers people and drives efficiency. Beyond writing code, I am an advocate for women in STEM, 
-                      committed to breaking barriers and inspiring more women to thrive in technology. I am passionate about using technology to 
+                      My journey into tech began with a desire to solve real-world business challenges, and it has grown into a mission to create technology
+                      that empowers people and drives efficiency. Beyond writing code, I am an advocate for women in STEM,
+                      committed to breaking barriers and inspiring more women to thrive in technology. I am passionate about using technology to
                       streamline businesses and create global impact, ensuring that innovation is both inclusive and transformative.
                     </p>
                   </div>
@@ -249,10 +249,12 @@ export function AboutSection() {
                       />
                     </motion.div>
                     <div>
-                      <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">Based in Nigeria</h3>
+                      <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        Currently based in Enugu, Nigeria. I am continuously expanding my frontend development skills through innovative projects and 
-                        cutting-edge learning opportunities. Look forward to exploring new horizons in the Web3 space.
+                        I turn Figma designs and product requirements into clean, scalable UIs
+                        across data-driven dashboards, Web3 platforms, and everything in between.
+                        Performance, type safety, and real user outcomes are always the goal.
+
                       </p>
                     </div>
                   </div>
