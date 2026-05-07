@@ -7,11 +7,11 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Send, CheckCircle, ArrowLeft } from "lucide-react"
+import { Mail, Send, CheckCircle } from "lucide-react"
 import { FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6"
 
 export function ContactSection() {
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
@@ -28,48 +28,47 @@ export function ContactSection() {
     }));
   };
 
- async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-   e.preventDefault();
-   setIsSubmitting(true);
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-   try {
-     const response = await fetch("https://api.web3forms.com/submit", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-         Accept: "application/json",
-       },
-       body: JSON.stringify({
-         access_key: "591db837-4411-4bd1-ac9a-0b32eaff9d48",
-         name: formData.name,
-         email: formData.email,
-         message: formData.message,
-       }),
-     });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-     const result = await response.json();
+      const result = await response.json();
 
-     if (result.success) {
-       console.log("Form submitted successfully:", result);
-       setSubmitterName(formData.name);
-       setIsSuccess(true);
-       // Reset form
-       setFormData({ name: "", email: "", message: "" });
-     } else {
-       console.error("Submission failed:", result);
-       alert("Failed to send message. Please try again.");
-     }
-   } catch (error) {
-     console.error("Submission error:", error);
-     alert("An error occurred. Please try again.");
-   } finally {
-     setIsSubmitting(false);
-   }
- }
- const handleBackToForm = () => {
-   setIsSuccess(false);
-   setSubmitterName("");
- }
+      if (result.success) {
+        setSubmitterName(formData.name);
+        setIsSuccess(true);
+        // Reset form
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        console.error("Submission failed:", result);
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+  const handleBackToForm = () => {
+    setIsSuccess(false);
+    setSubmitterName("");
+  }
   return (
     <section id="contact" className="py-20 px-4 bg-muted/30">
       <div className="max-w-4xl mx-auto">
@@ -81,62 +80,83 @@ export function ContactSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <Card className="p-7 glass-card">
-            <h3 className="text-3xl font-bold mb-6">Send me a message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Input
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="bg-background/50 border-border/50 focus:border-primary"
-                  required
-                />
+          <Card className="p-7 glass-card relative overflow-hidden">
+            {/* Success Message - Overlay on Form Card */}
+            {isSuccess ? (
+              <div className="flex flex-col items-center justify-center text-center py-6">
+                <CheckCircle className="w-14 h-14 text-green-500 mb-4" />
+                <h3 className="text-xl font-bold text-foreground mb-2">Message Sent!</h3>
+                <p className="text-muted-foreground text-sm mb-1">
+                  Thank you{submitterName && `, ${submitterName}`}! Your message has been sent successfully.
+                </p>
+                <p className="text-muted-foreground text-sm mb-6">
+                  I&apos;ll get back to you as soon as possible.
+                </p>
+                <Button
+                  onClick={handleBackToForm}
+                  className="w-full gradient-blue-500 font-bold text-white hover:opacity-95 tracking-tight"
+                >
+                  Send Another Message
+                </Button>
               </div>
-              <div>
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-background/50 border-border/50 focus:border-primary"
-                  required
-                />
-              </div>
-              <div>
-                <Textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="mb-4 bg-background/50 border-border/50 focus:border-primary min-h-32"
-                  required
-                />
-              </div>
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full text-white transition-all duration-300 size-lg ${
-                  isSubmitting
-                    ? 'bg-gray-500 cursor-not-allowed'
-                    : 'gradient-blue-500 hover:opacity-90 glow-effect'
-                }`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </form>
+            ) : (
+              <>
+                <h3 className="text-3xl font-bold mb-6">Send me a message</h3>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Input
+                      name="name"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="bg-background/50 border-border/50 focus:border-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      name="email"
+                      type="email"
+                      placeholder="Your Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="bg-background/50 border-border/50 focus:border-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Textarea
+                      name="message"
+                      placeholder="Your Message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="mb-4 bg-background/50 border-border/50 focus:border-primary min-h-32"
+                      required
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full text-white transition-all duration-300 size-lg ${isSubmitting
+                      ? 'bg-gray-500 cursor-not-allowed'
+                      : 'gradient-blue-500 font-bold opacity-95 tracking-tight'
+                      }`}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </>
+            )}
           </Card>
 
           <div className="space-y-6">
@@ -202,7 +222,7 @@ export function ContactSection() {
                   size="icon"
                   onClick={() => window.open("https://github.com/Starr365", "_blank")}
                   aria-label="View my work on GitHub"
-                  className="rounded-full hover-glow transition-all duration-300 bg-transparent "
+                  className="rounded-full hover-glow transition-all duration-300 bg-transparent"
                 >
                   <FaGithub className="w-5 h-5" />
                 </Button>
@@ -213,48 +233,13 @@ export function ContactSection() {
                     aria-label="Send me an email"
                     className="rounded-full hover-glow transition-all duration-300 bg-transparent"
                   >
-                  <Mail className="w-5 h-5" />
-                </Button>
+                    <Mail className="w-5 h-5" />
+                  </Button>
                 </a>
-
               </div>
             </div>
           </div>
         </div>
-
-        {/* Success Message - Overlay Form */}
-        {isSuccess && (
-          <div className="fixed inset-0 bg-background/95 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <Card className="max-w-md w-full p-8 glass-card text-center relative">
-              <button
-                onClick={handleBackToForm}
-                className="absolute top-4 right-4 p-2 hover:bg-muted/50 rounded-full transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-
-              <div className="mb-6">
-                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent Successfully!</h3>
-                <p className="text-muted-foreground">
-                  Thank you{submitterName && `, ${submitterName}`}! Your message has been sent successfully.
-                </p>
-              </div>
-
-              <div className="space-y-3 text-sm text-muted-foreground mb-6">
-                <p>I&apos;ll get back to you as soon as possible.</p>
-                <p>You can also reach me through the contact methods listed.</p>
-              </div>
-
-              <Button
-                onClick={handleBackToForm}
-                className="w-full gradient-blue-500 text-white hover:opacity-90"
-              >
-                Send Another Message
-              </Button>
-            </Card>
-          </div>
-        )}
       </div>
     </section>
   )

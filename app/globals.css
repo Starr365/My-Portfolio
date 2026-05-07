@@ -316,3 +316,18 @@
     box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--secondary) / 0.3);
   }
 }
+
+/* Swiper Pagination Styles */
+.swiper-pagination-bullet {
+  background: hsl(var(--primary)) !important;
+  opacity: 0.3 !important;
+  width: 10px !important;
+  height: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  width: 24px !important;
+  border-radius: 5px !important;
+}
