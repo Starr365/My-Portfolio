@@ -19,7 +19,7 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-  
+
   // To Handle Scrolling to Sections
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -47,9 +47,8 @@ export function Navigation() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-card border-b border-border/50 backdrop-blur-xl" : "bg-transparent backdrop-blur-none"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass-card border-b border-border/50 backdrop-blur-xl" : "bg-transparent backdrop-blur-none"
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -57,13 +56,13 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.05 }}>
-            <button 
-              onClick={() => scrollToSection("#home")} 
+            <button
+              onClick={() => scrollToSection("#home")}
               aria-label="Back to top"
-              className="relative flex items-center justify-center w-auto h-10 sm:h-12 px-2 sm:px-3 rounded-xl sm:rounded-2xl bg-gradient-to-br from-background/60 via-background/40 to-background/20 shadow-lg border border-primary/20 transition-all duration-300 dark:from-primary/60 dark:via-primary/40 dark:to-accent/60 cursor-pointer"
+              className="relative flex items-center justify-center w-auto h-10 sm:h-12 px-3 sm:px-4 rounded-xl bg-primary/5 backdrop-blur-md border border-primary/20 hover:border-primary/40 transition-all duration-300 group shadow-lg shadow-primary/10 dark:bg-white/5 dark:border-white/10 dark:shadow-none"
             >
-              {/* Logo with inverted theme styling */}
-              <span className="text-base sm:text-lg font-black bg-gradient-to-br from-primary/80 via-primary/60 to-accent/60 bg-clip-text text-transparent drop-shadow-sm dark:from-background/80 dark:via-background/60 dark:to-background/40">
+              {/* Logo with soft glow styling */}
+              <span className="text-base sm:text-lg font-black bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300 dark:from-white dark:to-white/70">
                 {MyLogo}
               </span>
             </button>

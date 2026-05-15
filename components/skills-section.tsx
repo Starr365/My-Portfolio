@@ -8,7 +8,6 @@ import {
   FaJs,
   FaReact,
   FaGithub,
-  FaFigma,
   FaGitAlt,
   FaDatabase,
   FaCubes,
@@ -24,6 +23,7 @@ import {
   SiVercel,
   SiRedux,
   SiReactquery,
+  SiSvelte,
 } from 'react-icons/si';
 import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from "framer-motion"
@@ -42,6 +42,7 @@ const skills = [
   { icon: SiTypescript, name: "TypeScript", color: "text-blue-600" },
   { icon: FaReact, name: "React", color: "text-cyan-400" },
   { icon: SiNextdotjs, name: "Next.js", color: "text-foreground" },
+  { icon: SiSvelte, name: "Svelte.js", color: "text-orange-600" },
   { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-sky-400" },
   { icon: SiReactquery, name: "TanStack Query", color: "text-rose-500" },
   { icon: FaCubes, name: "Zustand", color: "text-amber-700" },
@@ -52,7 +53,6 @@ const skills = [
   { icon: FaGitAlt, name: "Git", color: "text-orange-600" },
   { icon: FaGithub, name: "GitHub", color: "text-foreground" },
   { icon: SiVercel, name: "Vercel", color: "text-foreground" },
-  { icon: FaFigma, name: "Figma", color: "text-rose-400" },
   { icon: SiVite, name: "Vite", color: "text-yellow-500" },
   { icon: FaCode, name: "Playwright", color: "text-green-500" },
 ]
