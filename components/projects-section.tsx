@@ -14,7 +14,7 @@ const MotionImage = motion(Image)
 
 const projects = [
   {
-    title: "Dishcovery - Recipe Finder",
+    title: "Dishcovery (Recipe Finder)",
     description:
       "A modern recipe discovery app powered by TheMealDB API with favorites management. Optimized with TanStack Query for caching and deduplication.",
     image: "/dishcovery.jpg",
@@ -24,15 +24,19 @@ const projects = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    title: "Obodofarm - AgriTech",
+    title: "HealthMate WebApp",
     description:
-      "A hackathon-winning agri platform that connects farmers to buyers and provides modern farming insights.",
-    image: "/obodo.jpg",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion", "Payment Integration"],
-    liveUrl: "https://www.obodofarm.site/",
-    githubUrl: "https://github.com/Starr365",
+      "A full-stack healthcare platform for booking appointments, video consultations, pharmacy orders, and managing medical records securely.",
+    image: "/health-mate.jpg",
+    tags: [
+      "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion",
+      "Google OAuth", "Video Conferencing API"
+    ],
+    liveUrl: "https://healthmate-eight.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Healthmate-client",
     gradient: "from-indigo-500 to-purple-500",
   },
+
   {
     title: "Impact For Good WebApp",
     description:
@@ -44,7 +48,7 @@ const projects = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    title: "EcoPay - Fintech",
+    title: "EcoPay (Fintech)",
     description:
       "A hacakthon-winning web application that automatically calculates and offsets carbon emissions from your financial transactions.",
     image: "/ecopay.jpg",
@@ -54,7 +58,7 @@ const projects = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    title: "Daily Muse - Mood Journaling Web App",
+    title: "Daily Muse (Mood Journaling Web App)",
     description:
       "A personal mental health tracker where users log daily moods, visualize trends, and get motivational quotes.",
     image: "/daily-muse.jpg",
@@ -64,16 +68,15 @@ const projects = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    title: "Bill-Ease - Landing Page",
+    title: "Obodofarm (AgriTech)",
     description:
-      "A modern, user-friendly web application designed to simplify group bill splitting and expense management",
-    image: "/billease.jpg",
-    tags: ["HTML", "Vanilla CSS", "JavaScript"],
-    liveUrl: "https://starr365.github.io/Bill-Ease/",
-    githubUrl: "https://github.com/Starr365/Bill-Ease",
+      "A hackathon-winning agri platform that connects farmers to buyers and provides modern farming insights.",
+    image: "/obodo.jpg",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion", "Payment Integration"],
+    liveUrl: "https://www.obodofarm.site/",
+    githubUrl: "https://github.com/Starr365",
     gradient: "from-indigo-500 to-purple-500",
   },
-
 ];
 
 export function ProjectsSection() {
@@ -272,22 +275,6 @@ export function ProjectsSection() {
                     }}
                   />
 
-                  {/* Glass corner accent with enhanced effect */}
-                  <motion.div
-                    className="absolute top-4 right-4 w-12 h-12 rounded-lg opacity-60 group-hover:opacity-90 transition-all duration-500"
-                    initial={{ opacity: 0.6, scale: 0.8 }}
-                    whileHover={{ opacity: 0.9, scale: 1 }}
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.15)',
-                      backdropFilter: 'blur(20px) saturate(200%)',
-                      WebkitBackdropFilter: 'blur(20px) saturate(200%)',
-                      border: '1px solid rgba(255, 255, 255, 0.3)',
-                      boxShadow: '0 8px 32px rgba(31, 38, 135, 0.37)',
-                    }}
-                  >
-                    <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 rounded-lg"></div>
-                  </motion.div>
-
                   {/* Additional glass accent elements */}
                   <motion.div
                     className="absolute top-4 left-4 w-8 h-8 rounded-full opacity-40 group-hover:opacity-70 transition-all duration-500"
@@ -421,7 +408,7 @@ export function ProjectsSection() {
                         >
                           <Badge
                             variant="secondary"
-                            className="bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 transition-all duration-300 text-xs sm:text-sm px-2 py-1"
+                            className="bg-primary/10 text-primary dark:bg-white/10 dark:text-muted-foreground dark:border-white/20 border border-primary/20 transition-all duration-300 text-xs sm:text-sm px-2 py-1"
                           >
                             {tag}
                           </Badge>

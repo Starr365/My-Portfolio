@@ -191,13 +191,11 @@ const ExperienceCard = ({ item, isExperience }: { item: (typeof experiences)[0] 
                 initial={{ opacity: 0, scale: 0.8, y: 10 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: skillIndex * 0.05 + 0.2 }}
-                className="px-3 py-1 text-xs sm:text-sm rounded-full font-medium transition-all duration-300 cursor-pointer"
-                style={{
-                  background: isExperience
-                    ? "linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%)"
-                    : "linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(34, 197, 94, 0.2) 100%)",
-                  color: isExperience ? "rgb(196, 181, 253)" : "rgb(147, 197, 253)",
-                }}
+                className={`px-3 py-1 text-xs sm:text-sm rounded-full font-medium transition-all duration-300 cursor-pointer ${
+                  isExperience 
+                    ? "bg-primary/10 text-primary dark:text-purple-200" 
+                    : "bg-blue-500/10 text-blue-600 dark:text-blue-200"
+                }`}
                 whileHover={{
                   scale: 1.1,
                   y: -2,

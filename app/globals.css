@@ -283,6 +283,11 @@
     transform: translateY(-8px) rotateX(5deg);
     box-shadow: 0 20px 60px hsl(var(--primary) / 0.3);
   }
+
+  /* Standardized blue button background */
+  .gradient-blue-500 {
+    background: linear-gradient(135deg, #2522c7 0%, #2c2edc 50%, #3538e8 100%);
+  }
 }
 
 @keyframes floating {

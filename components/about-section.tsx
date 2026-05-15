@@ -34,7 +34,7 @@ export function AboutSection() {
   }
 
   return (
-    <section id="about" className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 px-3 sm:px-4 bg-background relative overflow-hidden" ref={ref}>
+    <section id="about" className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 px-3 sm:px-4 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden">
         {shouldAnimate && (
           <>
@@ -131,7 +131,7 @@ export function AboutSection() {
           </motion.h2>
           <motion.p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" variants={itemVariants}>
             I write code that transforms ideas into intuitive, responsive, and scalable web applications
-            utilizing modern frameworks like Next.js, React.js, TypeScript, Tailwind CSS, JavaScript, and Vanilla CSS.
+            utilizing modern frameworks like Next.js, React.js, Svelte.js, TypeScript, Tailwind CSS, JavaScript, and Vanilla CSS.
           </motion.p>
 
           {/* Resume Button */}
@@ -144,7 +144,7 @@ export function AboutSection() {
                 size="lg"
                 onClick={() => window.open("https://docs.google.com/document/d/1OvzWZRpR0_SaOWEt0Xhap9_v6Imgm3a-/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
                 aria-label="View and download my professional resume"
-                className="gradient-blue-500 text-background hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
+                className="gradient-blue-500 text-white hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
               >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 View My Resume

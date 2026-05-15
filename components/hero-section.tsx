@@ -213,7 +213,7 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center mb-6 sm:mb-10 lg:mb-12"
+              className="flex flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center mb-6 sm:mb-10 lg:mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
@@ -223,7 +223,7 @@ export function HeroSection() {
                   size="lg"
                   onClick={() => scrollToSection("#projects")}
                   aria-label="View my projects and portfolio work"
-                  className="bg-blue-600 text-background opacity-95 shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg border-0 w-full sm:w-auto tracking-tight"
+                  className="gradient-blue-500 text-white opacity-95 shadow-xl transition-all duration-300 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg border-0 w-full sm:w-auto tracking-tight"
                 >
                   Explore My Work
                 </Button>
@@ -248,168 +248,58 @@ export function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              {/* Crazy Box Collection Background */}
-              <div className="absolute inset-0 -z-10">
+              {/* Ethereal Aura Background */}
+              <div className="absolute inset-0 -z-10 flex items-center justify-center">
                 {shouldAnimate && (
                   <>
-                    {/* Large rotating boxes */}
+                    {/* Main soft glow behind the image */}
                     <motion.div
-                      className="absolute -top-20 -left-20 w-16 h-16 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-md backdrop-blur-sm"
+                      className="absolute w-[120%] h-[120%] rounded-full bg-primary/20 blur-[120px]"
                       animate={{
-                        rotate: [0, 45, 90, 135, 180, 225, 270, 315, 360],
-                        scale: [1, 1.2, 1, 0.8, 1],
-                        x: [0, 10, -5, 15, 0],
-                        y: [0, -15, 10, -8, 0],
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.5, 0.3],
                       }}
-                      transition={{
-                        duration: 12,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                      }}
+                      transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                     />
 
+                    {/* Subtle floating glass orbs */}
                     <motion.div
-                      className="absolute -top-10 -right-32 w-12 h-12 bg-gradient-to-tl from-secondary/40 to-primary/40 rounded-md backdrop-blur-sm"
+                      className="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-xl border border-white/20"
                       animate={{
-                        rotate: [360, 270, 180, 90, 0],
-                        scale: [0.8, 1.3, 0.9, 1.1, 0.8],
-                        x: [0, -20, 10, -15, 0],
-                        y: [0, 20, -10, 15, 0],
+                        y: [0, -30, 0],
+                        x: [0, 20, 0],
                       }}
-                      transition={{
-                        duration: 10,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 2,
+                      transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                    />
+                    <motion.div
+                      className="absolute bottom-0 -right-20 w-48 h-48 bg-secondary/10 rounded-full blur-2xl border border-white/10"
+                      animate={{
+                        y: [0, 40, 0],
+                        x: [0, -30, 0],
                       }}
+                      transition={{ duration: 12, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
                     />
 
-                    <motion.div
-                      className="absolute -bottom-16 -left-24 w-20 h-20 bg-gradient-to-r from-primary/25 via-secondary/35 to-primary/25 rounded-xl backdrop-blur-sm"
-                      animate={{
-                        rotate: [0, 90, 180, 270, 360],
-                        scale: [1, 0.7, 1.4, 0.9, 1],
-                        x: [0, 25, -10, 20, 0],
-                        y: [0, -20, 15, -12, 0],
-                      }}
-                      transition={{
-                        duration: 15,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 1,
-                      }}
-                    />
-
-                    <motion.div
-                      className="absolute -bottom-8 -right-28 w-14 h-14 bg-gradient-to-bl from-secondary/30 to-primary/30 rounded-lg backdrop-blur-sm"
-                      animate={{
-                        rotate: [45, 135, 225, 315, 45],
-                        scale: [1.1, 0.8, 1.3, 0.9, 1.1],
-                        x: [0, -15, 12, -18, 0],
-                        y: [0, 18, -8, 22, 0],
-                      }}
-                      transition={{
-                        duration: 8,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 3,
-                      }}
-                    />
-
-                    {/* Medium floating boxes */}
-                    <motion.div
-                      className="absolute top-1/4 -left-16 w-8 h-8 bg-gradient-to-tr from-primary/50 to-secondary/50 rounded-md backdrop-blur-sm"
-                      animate={{
-                        rotate: [0, 180, 360],
-                        scale: [1, 1.5, 1],
-                        x: [0, 8, -5, 12, 0],
-                        y: [0, -12, 8, -6, 0],
-                      }}
-                      transition={{
-                        duration: 6,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 0.5,
-                      }}
-                    />
-
-                    <motion.div
-                      className="absolute top-1/3 -right-20 w-10 h-10 bg-gradient-to-br from-secondary/45 to-primary/45 rounded-lg backdrop-blur-sm"
-                      animate={{
-                        rotate: [90, 270, 450],
-                        scale: [0.9, 1.2, 0.9],
-                        x: [0, -10, 6, -8, 0],
-                        y: [0, 15, -7, 18, 0],
-                      }}
-                      transition={{
-                        duration: 9,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 1.5,
-                      }}
-                    />
-
-                    <motion.div
-                      className="absolute bottom-1/4 -left-12 w-6 h-6 bg-primary/60 rounded-sm backdrop-blur-sm"
-                      animate={{
-                        rotate: [180, 0, 180],
-                        scale: [1.2, 0.8, 1.2],
-                        x: [0, 6, -4, 8, 0],
-                        y: [0, -8, 5, -10, 0],
-                      }}
-                      transition={{
-                        duration: 7,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 2.5,
-                      }}
-                    />
-
-                    {/* Small accent boxes */}
-                    <motion.div
-                      className="absolute top-1/2 -left-8 w-4 h-4 bg-primary/70 rounded-sm backdrop-blur-sm"
-                      animate={{
-                        rotate: [0, 360],
-                        scale: [1, 1.8, 1],
-                        opacity: [0.7, 1, 0.7],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                      }}
-                    />
-
-                    <motion.div
-                      className="absolute top-3/4 -right-12 w-5 h-5 bg-secondary/70 rounded-md backdrop-blur-sm"
-                      animate={{
-                        rotate: [360, 0],
-                        scale: [0.8, 1.6, 0.8],
-                        opacity: [0.6, 1, 0.6],
-                      }}
-                      transition={{
-                        duration: 5,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 1,
-                      }}
-                    />
-
-                    <motion.div
-                      className="absolute bottom-1/3 -right-6 w-3 h-3 bg-primary/80 rounded-full backdrop-blur-sm"
-                      animate={{
-                        scale: [1, 2, 1],
-                        opacity: [0.8, 1, 0.8],
-                        x: [0, 3, -2, 4, 0],
-                        y: [0, -4, 2, -5, 0],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                        delay: 0.8,
-                      }}
-                    />
+                    {/* Delicate particles */}
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1.5 h-1.5 bg-primary/40 rounded-full"
+                        style={{
+                          left: `${Math.random() * 100}%`,
+                          top: `${Math.random() * 100}%`,
+                        }}
+                        animate={{
+                          y: [0, -40, 0],
+                          opacity: [0, 1, 0],
+                        }}
+                        transition={{
+                          duration: 5 + Math.random() * 5,
+                          repeat: Number.POSITIVE_INFINITY,
+                          delay: Math.random() * 5,
+                        }}
+                      />
+                    ))}
                   </>
                 )}
               </div>
@@ -429,22 +319,24 @@ export function HeroSection() {
 
               {/* Main photo frame */}
               <motion.div
-                className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full glass-card p-2 hover:scale-105 transition-all duration-500"
+                className="relative w-72 h-72 sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] rounded-full glass-card p-2 hover:scale-105 transition-all duration-500"
                 whileHover={{
                   boxShadow: "0 0 50px rgba(147, 51, 234, 0.3), 0 0 100px rgba(59, 130, 246, 0.2)",
                 }}
               >
-                {/* Inner frame with gradient border */}
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-background/10 backdrop-blur-sm">
+                {/* Refined Frame with Soft Outer Glow */}
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/30 via-secondary/30 to-primary/30 p-[2px] shadow-xl shadow-primary/20">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-background/5 backdrop-blur-[2px] relative">
+                    {/* Subtle overlay to blend the image */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent z-10 pointer-events-none" />
                     {/* My Professional Photo */}
                     <Image
-                      src="/Animated me.png"
+                      src="/main-upscale2.png"
                       alt="Nzeribe Mmesoma Stella - Professional profile photo"
                       fill
                       priority
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                      className="w-full h-full object-cover rounded-full"
+                      sizes="(max-width: 640px) 288px, (max-width: 1024px) 400px, 500px"
+                      className="object-cover translate-y-14 scale-108"
                     />
                   </div>
                 </div>
