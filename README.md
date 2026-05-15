@@ -19,7 +19,7 @@ This project is a high-performance, aesthetically premium personal portfolio bui
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: React Icons (Lucide, Simple Icons)
-- **Components**: Radix UI / Shadcn UI
+- **Components**: Shadcn UI
 - **Contact Integration**: Web3Forms API
 - **Deployment**: Vercel
 
@@ -103,7 +103,6 @@ This project is licensed under the **MIT License**.
 For questions or support, feel free to reach out:
 - **GitHub**: [@Starr365](https://github.com/Starr365)
 - **Twitter**: [@starr_o25](https://twitter.com/starr_o25)
-- **Portfolio**: [Live Demo](https://nzeribe-mmesoma.vercel.app/)
 
 ---
 
