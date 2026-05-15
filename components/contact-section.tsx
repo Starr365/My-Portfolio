@@ -74,7 +74,7 @@ export function ContactSection() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">Let&apos;s Work Together</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
             Have a role, freelance brief, or collaboration in mind? Let&apos;s connect and create something amazing together. Send a message, I&apos;ll reply within 24–48 hours.
           </p>
         </div>
