@@ -73,7 +73,7 @@ export function ContactSection() {
     <section id="contact" className="py-20 px-4 bg-muted/30">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Let&apos;s Work Together</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">Let&apos;s Work Together</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Have a role, freelance brief, or collaboration in mind? Let&apos;s connect and create something amazing together. Send a message, I&apos;ll reply within 24–48 hours.
           </p>
