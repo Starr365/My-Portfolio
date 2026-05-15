@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nzeribe Mmesoma Stella - Frontend Engineer",
     description: "Portfolio of Nzeribe Mmesoma Stella - Frontend Engineer specializing in Web3 and modern technologies",
-    images: ["/Animated me.png"],
-    creator: "@starr_o25", // Replace with your actual Twitter handle
+    images: ["/main-2.jpeg"],
+    creator: "@starr_o25",
   },
   robots: {
     index: true,
