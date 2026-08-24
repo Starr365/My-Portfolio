@@ -207,7 +207,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              I engineer end-to-end web applications across the full stack—from database schema architecture and robust backend API development to high-performance, intuitive interface layers.
+              I build functional, scalable, and user-friendly web applications from concept to code; combining modern frontend engineering with backend systems integration.
             </motion.p>
 
             {/* CTA Buttons */}

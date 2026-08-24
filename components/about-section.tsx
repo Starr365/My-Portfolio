@@ -130,7 +130,7 @@ export function AboutSection() {
             About Me
           </motion.h2>
           <motion.p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" variants={itemVariants}>
-            I write clean, scalable code across the full development pipeline—building robust backend APIs, database schemas, and intuitive frontend interfaces with technologies like Node.js, Express, PostgreSQL, Prisma, Next.js, React.js, and TypeScript.
+            While frontend is where I specialize, I also design and build the backend systems behind my larger projects, including designing schemas, engineering APIs, setting up databases, and handling authentication when a project calls for full ownership.
           </motion.p>
 
           {/* Resume Button */}
