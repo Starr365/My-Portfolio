@@ -24,8 +24,8 @@ const experiences = [
     period: "Jan. 2026 - Mar. 2026",
     location: "Remote",
     description:
-      "Collaborated within a cross-functional team to build a PropTech platform from the ground up, delivering seven role-based dashboards using React, Next.js, and TypeScript. Architected scalable dashboard interfaces, integrated 320+ API endpoints with TanStack Query, and implemented complex forms and testing workflows to ensure seamless user experiences and reliable data rendering.",
-    skills: ["React", "Next.js", "TypeScript", "TanStack Query", "React Hook Form", "Playwright"],
+      "Collaborated within a cross-functional team to build a PropTech platform from the ground up, delivering seven role-based dashboards using React, Next.js, and TypeScript. Architected client-side data pipelines integrating 320+ backend API endpoints with TanStack Query, and implemented complex forms, state synchronization, and automated testing workflows to ensure reliable data rendering across the entire system.",
+    skills: ["React", "Next.js", "TypeScript", "TanStack Query", "REST APIs", "React Hook Form", "Playwright"],
   },
   {
     role: "Frontend Developer",

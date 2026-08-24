@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowUp, Mail, Code,  } from "lucide-react"
+import { ArrowUp, Mail, Code, } from "lucide-react"
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import { Button } from "./ui/button"
 import { MyLogo } from "./navigation"
@@ -50,7 +50,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-              Frontend Engineer crafting beautiful, functional web applications with modern technologies.
+              Frontend-Focused Software Engineer crafting beautiful, intuitive user interfaces.
             </p>
           </div>
 

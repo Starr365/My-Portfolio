@@ -191,7 +191,7 @@ export function HeroSection() {
                 >
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                 </motion.div>
-                <span className="text-sm sm:text-base lg:text-lg">Frontend Engineer || Web3 Builder</span>
+                <span className="text-sm sm:text-base lg:text-lg">Frontend-Focused Software Engineer</span>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
@@ -207,8 +207,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              I build functional, scalable, and user-friendly websites from concept to code; transforming ideas into seamless
-              digital experiences using cutting-edge technologies, modern frameworks, and pixel-perfect design.
+              I engineer end-to-end web applications across the full stack—from database schema architecture and robust backend API development to high-performance, intuitive interface layers.
             </motion.p>
 
             {/* CTA Buttons */}
