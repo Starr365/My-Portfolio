@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { MapPin, User, Sparkles, Heart, Zap, FileText } from "lucide-react"
+import { MapPin, Sparkles, Heart, Zap, FileText } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { useInView, Variants } from "framer-motion"
 import { useRef } from "react"
@@ -199,8 +199,7 @@ export function AboutSection() {
                     <div>
                       <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        I architect and build full-stack web applications; designing relational database schemas, engineering secure REST APIs, and crafting responsive, data-driven interfaces.
-                        Performance, type safety, and real user outcomes are always the goal.
+                        I’m a Software Engineer who builds production-ready web applications across the frontend and backend. I combine strong frontend engineering with backend development to turn complex requirements into scalable, reliable products. From designing intuitive interfaces to building APIs, data models, application logic, and automated workflows, I focus on engineering software that works well, scales effectively, and solves real problems.
                       </p>
                     </div>
                   </div>
