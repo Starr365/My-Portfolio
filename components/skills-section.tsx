@@ -1,7 +1,7 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Zap, Sparkles } from "lucide-react"
+import { Zap, Sparkles, Server, Layout, Layers } from "lucide-react"
 import {
   FaHtml5,
   FaCss3Alt,
@@ -11,7 +11,9 @@ import {
   FaGitAlt,
   FaDatabase,
   FaCubes,
-  FaCode
+  FaCode,
+  FaNodeJs,
+  FaLock
 } from 'react-icons/fa';
 import {
   SiNextdotjs,
@@ -24,10 +26,15 @@ import {
   SiRedux,
   SiReactquery,
   SiSvelte,
+  SiExpress,
+  SiPostgresql,
+  SiMysql,
+  SiPrisma,
+  SiSocketdotio,
 } from 'react-icons/si';
 import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
@@ -35,26 +42,45 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const skills = [
-  { icon: FaHtml5, name: "HTML5", color: "text-orange-500" },
-  { icon: FaCss3Alt, name: "CSS3", color: "text-blue-500" },
-  { icon: FaJs, name: "JavaScript", color: "text-yellow-400" },
-  { icon: SiTypescript, name: "TypeScript", color: "text-blue-600" },
-  { icon: FaReact, name: "React", color: "text-cyan-400" },
-  { icon: SiNextdotjs, name: "Next.js", color: "text-foreground" },
-  { icon: SiSvelte, name: "Svelte.js", color: "text-orange-600" },
-  { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-sky-400" },
-  { icon: SiReactquery, name: "TanStack Query", color: "text-rose-500" },
-  { icon: FaCubes, name: "Zustand", color: "text-amber-700" },
-  { icon: SiRedux, name: "Redux", color: "text-purple-600" },
-  { icon: SiSupabase, name: "Supabase", color: "text-emerald-500" },
-  { icon: SiFirebase, name: "Firebase", color: "text-orange-400" },
-  { icon: FaDatabase, name: "REST APIs", color: "text-blue-400" },
-  { icon: FaGitAlt, name: "Git", color: "text-orange-600" },
-  { icon: FaGithub, name: "GitHub", color: "text-foreground" },
-  { icon: SiVercel, name: "Vercel", color: "text-foreground" },
-  { icon: SiVite, name: "Vite", color: "text-yellow-500" },
-  { icon: FaCode, name: "Playwright", color: "text-green-500" },
+type SkillCategory = "all" | "frontend" | "backend";
+
+interface SkillItem {
+  icon: React.ComponentType<{ className?: string }>;
+  name: string;
+  color: string;
+  category: "frontend" | "backend";
+}
+
+const skills: SkillItem[] = [
+  // Backend & Databases
+  { icon: FaNodeJs, name: "Node.js", color: "text-emerald-500", category: "backend" },
+  { icon: SiExpress, name: "Express.js", color: "text-gray-400 dark:text-gray-200", category: "backend" },
+  { icon: FaDatabase, name: "REST APIs", color: "text-blue-400", category: "backend" },
+  { icon: SiSocketdotio, name: "Socket.IO", color: "text-slate-300", category: "backend" },
+  { icon: SiPostgresql, name: "PostgreSQL", color: "text-blue-500", category: "backend" },
+  { icon: SiMysql, name: "MySQL", color: "text-sky-600", category: "backend" },
+  { icon: SiPrisma, name: "Prisma ORM", color: "text-teal-400", category: "backend" },
+  { icon: FaLock, name: "Auth.js", color: "text-purple-400", category: "backend" },
+  { icon: SiSupabase, name: "Supabase", color: "text-emerald-500", category: "backend" },
+  { icon: SiFirebase, name: "Firebase", color: "text-orange-400", category: "backend" },
+
+  // Frontend
+  { icon: SiNextdotjs, name: "Next.js", color: "text-foreground", category: "frontend" },
+  { icon: FaReact, name: "React", color: "text-cyan-400", category: "frontend" },
+  { icon: SiTypescript, name: "TypeScript", color: "text-blue-600", category: "frontend" },
+  { icon: FaJs, name: "JavaScript", color: "text-yellow-400", category: "frontend" },
+  { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-sky-400", category: "frontend" },
+  { icon: SiReactquery, name: "TanStack Query", color: "text-rose-500", category: "frontend" },
+  { icon: SiSvelte, name: "Svelte.js", color: "text-orange-600", category: "frontend" },
+  { icon: FaCubes, name: "Zustand", color: "text-amber-700", category: "frontend" },
+  { icon: SiRedux, name: "Redux", color: "text-purple-600", category: "frontend" },
+  { icon: FaHtml5, name: "HTML5", color: "text-orange-500", category: "frontend" },
+  { icon: FaCss3Alt, name: "CSS3", color: "text-blue-500", category: "frontend" },
+  { icon: FaGitAlt, name: "Git", color: "text-orange-600", category: "frontend" },
+  { icon: FaGithub, name: "GitHub", color: "text-foreground", category: "frontend" },
+  { icon: SiVercel, name: "Vercel", color: "text-foreground", category: "frontend" },
+  { icon: SiVite, name: "Vite", color: "text-yellow-500", category: "frontend" },
+  { icon: FaCode, name: "Playwright", color: "text-green-500", category: "frontend" },
 ]
 
 export function SkillsSection() {
@@ -62,6 +88,11 @@ export function SkillsSection() {
   const isInView = useInView(ref)
   const prefersReducedMotion = useReducedMotion()
   const shouldAnimate = isInView && !prefersReducedMotion
+  const [activeTab, setActiveTab] = useState<SkillCategory>("all")
+
+  const filteredSkills = activeTab === "all"
+    ? skills
+    : skills.filter((skill) => skill.category === activeTab)
 
   return (
     <section id="skills" className="pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-10 lg:pb-12 px-3 sm:px-4 bg-muted/5 relative overflow-hidden" ref={ref}>
@@ -123,23 +154,45 @@ export function SkillsSection() {
             Skills & Technologies
           </motion.h2>
           <motion.p
-            className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
+            className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             The modern toolkit I use to build performant, accessible, and stunning digital experiences
           </motion.p>
+
+          {/* Interactive Stack Tab Switcher */}
+          <div className="flex justify-center items-center gap-2 sm:gap-4 mb-4">
+            {[
+              { key: "all" as const, label: "All Technologies", icon: Layers },
+              { key: "frontend" as const, label: "Frontend", icon: Layout },
+              { key: "backend" as const, label: "Backend & Databases", icon: Server },
+            ].map(({ key, label, icon: Icon }) => (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border ${activeTab === key
+                    ? "bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105 dark:bg-primary dark:text-white"
+                    : "bg-white/5 text-muted-foreground border-white/10 hover:border-white/30 hover:text-foreground"
+                  }`}
+              >
+                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>{label}</span>
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         <div className="relative group px-4 sm:px-8">
           <Swiper
+            key={activeTab}
             modules={[Autoplay, Pagination]}
             spaceBetween={20}
             slidesPerView={2}
-            loop={true}
+            loop={filteredSkills.length > 5}
             autoplay={{
-              delay: 1200,
+              delay: 1400,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
@@ -167,12 +220,12 @@ export function SkillsSection() {
             }}
             className="pb-16"
           >
-            {skills.map((skill, index) => (
-              <SwiperSlide key={skill.name}>
+            {filteredSkills.map((skill, index) => (
+              <SwiperSlide key={`${activeTab}-${skill.name}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
                 >
                   <Card className="flex flex-col items-center justify-center p-6 sm:p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group aspect-square">
                     <div className="relative mb-2">
@@ -193,8 +246,6 @@ export function SkillsSection() {
                     <span className="font-bold text-xs sm:text-sm text-foreground/80 group-hover:text-primary transition-colors duration-300 text-center leading-tight">
                       {skill.name}
                     </span>
-
-
                   </Card>
                 </motion.div>
               </SwiperSlide>
@@ -202,7 +253,6 @@ export function SkillsSection() {
           </Swiper>
         </div>
       </div>
-
     </section>
   )
 }

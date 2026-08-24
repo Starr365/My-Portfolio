@@ -14,13 +14,23 @@ const MotionImage = motion(Image)
 
 const projects = [
   {
-    title: "Dishcovery (Recipe Finder)",
+    title: "LionDesk",
     description:
-      "A modern recipe discovery app powered by TheMealDB API with favorites management. Optimized with TanStack Query for caching and deduplication.",
-    image: "/dishcovery.jpg",
-    tags: ["React", "TailwindCSS", "TanStack Query", "API Integration", "Local Storage"],
-    liveUrl: "https://dishcovery-lilac.vercel.app/",
-    githubUrl: "https://github.com/Starr365/Dishcovery",
+      "A role-based helpdesk platform powered by an automated workload-balancing engine, 2-business-day escalation logic, and real-time Socket.IO dashboards.",
+    image: "/billease.jpg",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MySQL", "Socket.IO"],
+    liveUrl: "https://lion-desk-lx11.vercel.app/",
+    githubUrl: "https://github.com/Starr365/LionDesk",
+    gradient: "from-indigo-500 to-purple-500",
+  },
+  {
+    title: "Apply Away",
+    description:
+      "An opportunity-management platform built with Auth.js user-level data isolation and an AI-powered opportunity extraction pipeline (Google Gemini + Resend).",
+    image: "/daily-muse.jpg",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma ORM", "Auth.js", "Google Gemini", "Resend"],
+    liveUrl: "https://apply-away.vercel.app/",
+    githubUrl: "https://github.com/Starr365/Apply-Away",
     gradient: "from-indigo-500 to-purple-500",
   },
   {
@@ -36,7 +46,6 @@ const projects = [
     githubUrl: "https://github.com/Starr365/Healthmate-client",
     gradient: "from-indigo-500 to-purple-500",
   },
-
   {
     title: "Impact For Good WebApp",
     description:
@@ -50,21 +59,11 @@ const projects = [
   {
     title: "EcoPay (Fintech)",
     description:
-      "A hacakthon-winning web application that automatically calculates and offsets carbon emissions from your financial transactions.",
+      "A hackathon-winning web application that automatically calculates and offsets carbon emissions from your financial transactions.",
     image: "/ecopay.jpg",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Wallet Connection", "API Integration", "Chart.js"],
     liveUrl: "https://ecopay-eight.vercel.app/",
     githubUrl: "https://github.com/Starr365/Ecopay",
-    gradient: "from-indigo-500 to-purple-500",
-  },
-  {
-    title: "Daily Muse (Mood Journaling Web App)",
-    description:
-      "A personal mental health tracker where users log daily moods, visualize trends, and get motivational quotes.",
-    image: "/daily-muse.jpg",
-    tags: ["React.js", "Tailwind CSS", "TypeScript", "Chart.js", "AI Model Integration"],
-    liveUrl: "https://daily-muse-eight.vercel.app/",
-    githubUrl: "https://github.com/Starr365/Daily-Muse",
     gradient: "from-indigo-500 to-purple-500",
   },
   {

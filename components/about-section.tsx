@@ -130,8 +130,7 @@ export function AboutSection() {
             About Me
           </motion.h2>
           <motion.p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" variants={itemVariants}>
-            I write code that transforms ideas into intuitive, responsive, and scalable web applications
-            utilizing modern frameworks like Next.js, React.js, Svelte.js, TypeScript, Tailwind CSS, JavaScript, and Vanilla CSS.
+            I write clean, scalable code across the full development pipeline—building robust backend APIs, database schemas, and intuitive frontend interfaces with technologies like Node.js, Express, PostgreSQL, Prisma, Next.js, React.js, and TypeScript.
           </motion.p>
 
           {/* Resume Button */}
@@ -251,10 +250,8 @@ export function AboutSection() {
                     <div>
                       <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        I turn Figma designs and product requirements into clean, scalable UIs
-                        across data-driven dashboards, Web3 platforms, and everything in between.
+                        I architect and build full-stack web applications—designing relational database schemas, engineering secure REST APIs, and crafting responsive, data-driven interfaces.
                         Performance, type safety, and real user outcomes are always the goal.
-
                       </p>
                     </div>
                   </div>
