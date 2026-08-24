@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   description: "Portfolio of Nzeribe Mmesoma Stella - Frontend-Focused Software Engineer specializing in modern web interfaces, design engineering, and full-stack web applications.",
   keywords: [
     "Nzeribe Mmesoma Stella",
+    "Software Engineer",
     "Frontend-Focused Software Engineer",
+    "Full-Stack Software Engineer",
     "Frontend Engineer",
     "Node.js",
     "Express",

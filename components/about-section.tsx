@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { MapPin, User, Sparkles, Heart, Zap, FileText } from "lucide-react"
+import { MapPin, Sparkles, Heart, Zap, FileText } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { useInView, Variants } from "framer-motion"
 import { useRef } from "react"
@@ -159,58 +159,7 @@ export function AboutSection() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <motion.div variants={itemVariants}>
-              <Card className="p-4 sm:p-6 lg:p-8 glass-card hover:glass-card-hover hover-glow transition-all duration-500 group relative overflow-hidden">
-                <motion.div
-                  className="absolute inset-0 opacity-5"
-                  animate={{
-                    backgroundPosition: ["0% 0%", "100% 100%"],
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "linear",
-                  }}
-                  style={{
-                    backgroundImage:
-                      'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" strokeWidth="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>\')',
-                    backgroundSize: "50px 50px",
-                  }}
-                />
-                <div className="flex items-start gap-4 sm:gap-6 relative z-10">
-                  <motion.div
-                    className="p-3 sm:p-4 rounded-xl web3-gradient relative flex-shrink-0"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <User className="w-6 h-6 sm:w-8 sm:h-8 text-background" />
-                    <motion.div
-                      className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"
-                      animate={{
-                        scale: [1, 1.5, 1],
-                        opacity: [1, 0.5, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                      }}
-                    />
-                  </motion.div>
-                  <div>
-                    <h3 className="font-bold text-lg sm:text-xl lg:text-2xl mb-3 sm:mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
-                      Professional Journey
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                      My journey into tech began with a desire to solve real-world business challenges, and it has grown into a mission to create technology
-                      that empowers people and drives efficiency. Beyond writing code, I am an advocate for women in STEM,
-                      committed to breaking barriers and inspiring more women to thrive in technology. I am passionate about using technology to
-                      streamline businesses and create global impact, ensuring that innovation is both inclusive and transformative.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
+
 
             <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               <motion.div variants={itemVariants}>
@@ -250,8 +199,7 @@ export function AboutSection() {
                     <div>
                       <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        I architect and build full-stack web applications; designing relational database schemas, engineering secure REST APIs, and crafting responsive, data-driven interfaces.
-                        Performance, type safety, and real user outcomes are always the goal.
+                        I’m a Full-Stack Software Engineer with strong frontend engineering expertise, experienced in building production-ready web applications across the entire stack. I specialize in creating intuitive, high-performance interfaces while building the backend systems, APIs, data models, and workflows that power them. I enjoy turning complex product requirements into scalable, reliable software with a strong focus on user experience, engineering quality, and maintainability.
                       </p>
                     </div>
                   </div>
