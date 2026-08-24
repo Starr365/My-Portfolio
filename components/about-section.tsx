@@ -199,7 +199,7 @@ export function AboutSection() {
                     <div>
                       <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        I turn product requirements into scalable web software—building crisp, accessible user interfaces alongside clean backend APIs, structured database schemas, and maintainable application logic.
+                        I turn product requirements into scalable web software; building crisp, accessible user interfaces alongside clean backend APIs, structured database schemas, and maintainable application logic.
                       </p>
                     </div>
                   </div>
