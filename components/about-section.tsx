@@ -130,7 +130,7 @@ export function AboutSection() {
             About Me
           </motion.h2>
           <motion.p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" variants={itemVariants}>
-            I’m a Software Engineer with strong frontend engineering expertise, building end-to-end web applications—from high-performance user interfaces to the backend APIs, databases, and authentication workflows that power them.
+            I’m a Software Engineer with strong frontend engineering expertise, building end-to-end web applications; from high-performance user interfaces to the backend APIs, databases, and authentication workflows that power them.
           </motion.p>
 
           {/* Resume Button */}
@@ -199,7 +199,7 @@ export function AboutSection() {
                     <div>
                       <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        I’m a Full-Stack Software Engineer with strong frontend engineering expertise, experienced in building production-ready web applications across the entire stack. I specialize in creating intuitive, high-performance interfaces while building the backend systems, APIs, data models, and workflows that power them. I enjoy turning complex product requirements into scalable, reliable software with a strong focus on user experience, engineering quality, and maintainability.
+                        I turn product requirements into scalable web software—building crisp, accessible user interfaces alongside clean backend APIs, structured database schemas, and maintainable application logic.
                       </p>
                     </div>
                   </div>
