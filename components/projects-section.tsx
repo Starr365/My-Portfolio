@@ -208,7 +208,7 @@ export function ProjectsSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            A showcase of my recent work and creative solutions that push the boundaries of web development
+            A showcase of production-ready applications combining intuitive frontend design with robust backend engineering
           </motion.p>
         </motion.div>
 
