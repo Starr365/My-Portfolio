@@ -199,7 +199,7 @@ export function AboutSection() {
                     <div>
                       <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        I’m a Software Engineer who builds production-ready web applications across the frontend and backend. I combine strong frontend engineering with backend development to turn complex requirements into scalable, reliable products. From designing intuitive interfaces to building APIs, data models, application logic, and automated workflows, I focus on engineering software that works well, scales effectively, and solves real problems.
+                        I’m a Full-Stack Software Engineer with strong frontend engineering expertise, experienced in building production-ready web applications across the entire stack. I specialize in creating intuitive, high-performance interfaces while building the backend systems, APIs, data models, and workflows that power them. I enjoy turning complex product requirements into scalable, reliable software with a strong focus on user experience, engineering quality, and maintainability.
                       </p>
                     </div>
                   </div>
