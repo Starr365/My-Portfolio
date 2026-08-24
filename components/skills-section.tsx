@@ -21,7 +21,6 @@ import {
   SiTypescript,
   SiSupabase,
   SiVite,
-  SiFirebase,
   SiVercel,
   SiRedux,
   SiReactquery,
@@ -62,7 +61,7 @@ const skills: SkillItem[] = [
   { icon: SiPrisma, name: "Prisma ORM", color: "text-teal-400", category: "backend" },
   { icon: FaLock, name: "Auth.js", color: "text-purple-400", category: "backend" },
   { icon: SiSupabase, name: "Supabase", color: "text-emerald-500", category: "backend" },
-  { icon: SiFirebase, name: "Firebase", color: "text-orange-400", category: "backend" },
+
 
   // Frontend
   { icon: SiNextdotjs, name: "Next.js", color: "text-foreground", category: "frontend" },
@@ -173,8 +172,8 @@ export function SkillsSection() {
                 key={key}
                 onClick={() => setActiveTab(key)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border ${activeTab === key
-                    ? "bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105 dark:bg-primary dark:text-white"
-                    : "bg-white/5 text-muted-foreground border-white/10 hover:border-white/30 hover:text-foreground"
+                  ? "bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105 dark:bg-primary dark:text-white"
+                  : "bg-white/5 text-muted-foreground border-white/10 hover:border-white/30 hover:text-foreground"
                   }`}
               >
                 <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />

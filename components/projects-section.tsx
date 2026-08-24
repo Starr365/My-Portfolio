@@ -14,23 +14,23 @@ const MotionImage = motion(Image)
 
 const projects = [
   {
-    title: "LionDesk",
-    description:
-      "A role-based helpdesk platform powered by an automated workload-balancing engine, 2-business-day escalation logic, and real-time Socket.IO dashboards.",
-    image: "/billease.jpg",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MySQL", "Socket.IO"],
-    liveUrl: "https://lion-desk-lx11.vercel.app/",
-    githubUrl: "https://github.com/Starr365/LionDesk",
-    gradient: "from-indigo-500 to-purple-500",
-  },
-  {
     title: "Apply Away",
     description:
-      "An opportunity-management platform built with Auth.js user-level data isolation and an AI-powered opportunity extraction pipeline (Google Gemini + Resend).",
-    image: "/daily-muse.jpg",
+      "A secure opportunity-management platform with Prisma-modeled PostgreSQL data, Auth.js authentication, and an AI pipeline that turns unstructured opportunity info into structured, deadline-tracked records.",
+    image: "/apply-away.jpg",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma ORM", "Auth.js", "Google Gemini", "Resend"],
     liveUrl: "https://apply-away.vercel.app/",
     githubUrl: "https://github.com/Starr365/Apply-Away",
+    gradient: "from-indigo-500 to-purple-500",
+  },
+  {
+    title: "LionDesk",
+    description:
+      "A role-based helpdesk platform with an automated workload-balancing engine and 2-business-day escalation logic, powered by a MySQL/Express backend and real-time Socket.IO dashboards.",
+    image: "/liondesk.jpg",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MySQL", "Socket.IO"],
+    liveUrl: "https://lion-desk-lx11.vercel.app/",
+    githubUrl: "https://github.com/Starr365/LionDesk",
     gradient: "from-indigo-500 to-purple-500",
   },
   {

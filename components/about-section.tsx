@@ -250,7 +250,7 @@ export function AboutSection() {
                     <div>
                       <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground">What I Do</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                        I architect and build full-stack web applications—designing relational database schemas, engineering secure REST APIs, and crafting responsive, data-driven interfaces.
+                        I architect and build full-stack web applications; designing relational database schemas, engineering secure REST APIs, and crafting responsive, data-driven interfaces.
                         Performance, type safety, and real user outcomes are always the goal.
                       </p>
                     </div>
