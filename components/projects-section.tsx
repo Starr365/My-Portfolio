@@ -14,7 +14,7 @@ const MotionImage = motion(Image)
 
 const projects = [
   {
-    title: "Apply Away",
+    title: "Apply Away (Opportunity Vault)",
     description:
       "A secure opportunity-management platform with Prisma-modeled PostgreSQL data, Auth.js authentication, and an AI pipeline that turns unstructured opportunity info into structured, deadline-tracked records.",
     image: "/apply-away.jpg",
@@ -24,7 +24,7 @@ const projects = [
     gradient: "from-indigo-500 to-purple-500",
   },
   {
-    title: "LionDesk",
+    title: "LionDesk (Helpdesk/Ticketing System)",
     description:
       "A role-based helpdesk platform with an automated workload-balancing engine and 2-business-day escalation logic, powered by a MySQL/Express backend and real-time Socket.IO dashboards.",
     image: "/liondesk.jpg",
