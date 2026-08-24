@@ -130,7 +130,7 @@ export function AboutSection() {
             About Me
           </motion.h2>
           <motion.p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" variants={itemVariants}>
-            While frontend is where I specialize, I also design and build the backend systems behind my larger projects — APIs, databases, and authentication — when a project calls for full ownership.
+            While frontend is where I specialize, I also design and build the backend systems behind my larger projects, including designing schemas, engineering APIs, setting up databases, and handling authentication when a project calls for full ownership.
           </motion.p>
 
           {/* Resume Button */}
