@@ -141,7 +141,7 @@ export function AboutSection() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                onClick={() => window.open("https://docs.google.com/document/d/1OvzWZRpR0_SaOWEt0Xhap9_v6Imgm3a-/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
+                onClick={() => window.open("https://docs.google.com/document/d/1rxeI4Jb_gqSEafPY_2UnWkvwy8gJX9NC/edit?usp=sharing&ouid=110351590111310881288&rtpof=true&sd=true", "_blank")}
                 aria-label="View and download my professional resume"
                 className="gradient-blue-500 text-white hover:opacity-90 glow-effect hover-glow shadow-lg hover:shadow-xl transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-0 w-full sm:w-auto"
               >
