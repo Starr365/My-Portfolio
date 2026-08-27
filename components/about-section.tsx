@@ -130,7 +130,7 @@ export function AboutSection() {
             About Me
           </motion.h2>
           <motion.p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-0" variants={itemVariants}>
-            I’m a Software Engineer with strong frontend engineering expertise, building end-to-end web applications; from high-performance user interfaces to the backend APIs, databases, and authentication workflows that power them.
+            I am a Software Engineer with strong frontend engineering expertise, building end-to-end web applications; from high-performance user interfaces to the backend APIs, databases, and authentication workflows that power them.
           </motion.p>
 
           {/* Resume Button */}

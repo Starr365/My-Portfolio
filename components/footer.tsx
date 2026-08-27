@@ -50,7 +50,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-              Frontend-Focused Software Engineer crafting beautiful, intuitive user interfaces.
+              Full-Stack Software Engineer building reliable, production-ready web applications.
             </p>
           </div>
 

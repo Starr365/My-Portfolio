@@ -9,8 +9,8 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://starr365-portfolio.vercel.app"),
-  title: "Nzeribe Mmesoma Stella - Frontend-Focused Software Engineer",
-  description: "Portfolio of Nzeribe Mmesoma Stella - Frontend-Focused Software Engineer specializing in modern web interfaces, design engineering, and full-stack web applications.",
+  title: "Nzeribe Mmesoma Stella - Full-Stack Software Engineer",
+  description: "Portfolio of Nzeribe Mmesoma Stella - Full-Stack Software Engineer building reliable, production-ready web applications.",
   keywords: [
     "Nzeribe Mmesoma Stella",
     "Software Engineer",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     "Web3",
   ],
   openGraph: {
-    title: "Nzeribe Mmesoma Stella - Frontend-Focused Software Engineer",
-    description: "Portfolio of Nzeribe Mmesoma Stella - Frontend-Focused Software Engineer specializing in modern web interfaces, design engineering, and full-stack web applications.",
+    title: "Nzeribe Mmesoma Stella - Full-Stack Software Engineer",
+    description: "Portfolio of Nzeribe Mmesoma Stella - Full-Stack Software Engineer building reliable, production-ready web applications.",
     url: "https://starr365-portfolio.vercel.app/",
     siteName: "Nzeribe Mmesoma Stella Portfolio",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/Animated me.png",
         width: 1200,
         height: 630,
-        alt: "Nzeribe Mmesoma Stella - Frontend-Focused Software Engineer Portfolio",
+        alt: "Nzeribe Mmesoma Stella - Full-Stack Software Engineer Portfolio",
       },
     ],
     locale: "en_US",

@@ -191,7 +191,7 @@ export function HeroSection() {
                 >
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                 </motion.div>
-                <span className="text-sm sm:text-base lg:text-lg">Frontend-Focused Software Engineer</span>
+                <span className="text-sm sm:text-base lg:text-lg">Full-Stack Software Engineer</span>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
