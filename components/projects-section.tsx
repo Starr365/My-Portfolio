@@ -16,9 +16,9 @@ const projects = [
   {
     title: "Apply Away (Opportunity Vault)",
     description:
-      "A secure opportunity-management platform with Prisma-modeled PostgreSQL data, Auth.js authentication, and an AI pipeline that turns unstructured opportunity info into structured, deadline-tracked records.",
+      "Production-ready opportunity management platform that centralizes opportunity discovery, application tracking, preparation, deadlines, and analytics, with AI-powered extraction and automated notifications.",
     image: "/apply-away.jpg",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma ORM", "Auth.js", "Google Gemini", "Resend"],
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Recharts", "Resend", "Gemini API"],
     liveUrl: "https://apply-away.vercel.app/",
     githubUrl: "https://github.com/Starr365/Apply-Away",
     gradient: "from-indigo-500 to-purple-500",
@@ -28,7 +28,7 @@ const projects = [
     description:
       "A role-based helpdesk platform with an automated workload-balancing engine and 2-business-day escalation logic, powered by a MySQL/Express backend and real-time Socket.IO dashboards.",
     image: "/liondesk.jpg",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MySQL", "Socket.IO"],
+    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MySQL", "Socket.IO", "TanStack Query", "D3.js"],
     liveUrl: "https://lion-desk-lx11.vercel.app/",
     githubUrl: "https://github.com/Starr365/LionDesk",
     gradient: "from-indigo-500 to-purple-500",
